@@ -7,8 +7,18 @@ final class HomeViewController: UIViewController {
     private lazy var emailTextField = Utils.makeTextField(placeholder: "Email")
     
     private lazy var passwordTextField = Utils.makeTextField(placeholder: "Password", isSecureTextEntry: true)
-    private lazy var loginButton = Utils.makeButton(title: "Login", selector: #selector(didLogin), font: .boldSystemFont(ofSize: 18))
-    private lazy var forgotPasswordButton = Utils.makeForgotPassword(regularTitle: "Forgot your password? ", boldTitle: "Get help signing in", selector: #selector(handleForgotPassword))
+    
+    private lazy var loginButton = Utils.makeButton(
+        title: "Login",
+        selector: #selector(didLogin),
+        font: .boldSystemFont(ofSize: 18)
+    )
+    
+    private lazy var forgotPasswordButton = Utils.makeForgotPassword(
+        regularTitle: "Forgot your password? ",
+        boldTitle: "Get help signing in",
+        selector: #selector(handleForgotPassword)
+    )
     
     private lazy var divider = Utils.makeDivider(text: "OR")
     
