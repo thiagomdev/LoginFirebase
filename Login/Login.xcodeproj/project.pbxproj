@@ -138,9 +138,9 @@
 		AADF71D22ACD8A1B00A49530 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				AADF71D32ACD8A2800A49530 /* ViewConfig.swift */,
 				AADF71D42ACD8A2800A49530 /* NSLayout+Extension.swift */,
 				AADF71D72ACD900100A49530 /* Utils.swift */,
+				AADF71D32ACD8A2800A49530 /* ViewConfig.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";

@@ -2,23 +2,12 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     
-    private lazy var iconImage: UIImageView = {
-        let icon = UIImageView()
-        icon.image = UIImage(named: "firebase-logo")
-        icon.contentMode = .scaleAspectFit
-        return icon
-    }()
-    
-    private lazy var stackView: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .vertical
-        stack.spacing = 16
-        return stack
-    }()
-    
+    private lazy var iconImage = Utils.makeImage()
+    private lazy var stackView = Utils.makeVerticalStackView()
     private lazy var emailTextField = Utils.makeTextField(placeholder: "Email")
     private lazy var passwordTextField = Utils.makeTextField(placeholder: "Password", isSecureTextEntry: true)
     private lazy var loginButton = Utils.makeButton(title: "Login", selector: #selector(didLogin))
+    private lazy var forgotPasswordButton = Utils.makeForgotPassword(regularTitle: "Forgot your password? ", boldTitle: "Get help signing in")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +30,7 @@ extension HomeViewController: ViewConfig {
         stackView.addArrangedSubview(emailTextField)
         stackView.addArrangedSubview(passwordTextField)
         stackView.addArrangedSubview(loginButton)
-        
+        stackView.addArrangedSubview(forgotPasswordButton)
         view.addSubview(stackView)
     }
     
