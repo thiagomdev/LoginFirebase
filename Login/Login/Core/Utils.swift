@@ -15,4 +15,17 @@ enum Utils {
         textField.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [.foregroundColor: UIColor(white: 1.0, alpha: 0.7)])
         return textField
     }
+    
+    static func makeButton(title: String, selector: Selector) -> UIButton {
+        let button = UIButton()
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(UIColor(white: 1, alpha: 0.67), for: .normal)
+        button.titleLabel?.font = .boldSystemFont(ofSize: 18)
+        button.titleLabel?.textColor = .white
+        button.layer.cornerRadius = 6
+        button.backgroundColor = .purple.withAlphaComponent(0.2)
+        button.addTarget(self, action: selector, for: .touchUpInside)
+        button.isEnabled = false
+        return button
+    }
 }

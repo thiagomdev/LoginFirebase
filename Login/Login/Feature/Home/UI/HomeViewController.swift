@@ -18,10 +18,18 @@ final class HomeViewController: UIViewController {
     
     private lazy var emailTextField = Utils.makeTextField(placeholder: "Email")
     private lazy var passwordTextField = Utils.makeTextField(placeholder: "Password", isSecureTextEntry: true)
-   
+    private lazy var loginButton = Utils.makeButton(title: "Login", selector: #selector(didLogin))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+    }
+}
+
+extension HomeViewController {
+    @objc
+    private func didLogin() {
+        
     }
 }
 
@@ -32,6 +40,7 @@ extension HomeViewController: ViewConfig {
         
         stackView.addArrangedSubview(emailTextField)
         stackView.addArrangedSubview(passwordTextField)
+        stackView.addArrangedSubview(loginButton)
         
         view.addSubview(stackView)
     }
@@ -48,7 +57,9 @@ extension HomeViewController: ViewConfig {
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
             
             emailTextField.heightAnchor.constraint(equalToConstant: 48),
-            passwordTextField.heightAnchor.constraint(equalToConstant: 48)
+            passwordTextField.heightAnchor.constraint(equalToConstant: 48),
+            
+            loginButton.heightAnchor.constraint(equalToConstant: 48)
         ])
     }
     
