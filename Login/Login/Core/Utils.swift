@@ -53,4 +53,42 @@ enum Utils {
         button.setAttributedTitle(attributedTitle, for: .normal)
         return button
     }
+    
+    static func makeDivider(text: String) -> UIView {
+        let containerView = UIView()
+        let label = UILabel()
+        label.text = text
+        label.font = .systemFont(ofSize: 14)
+        label.textColor = UIColor(white: 1, alpha: 0.80)
+        
+        containerView.addSubview(label)
+        
+        NSLayoutConstraint.pin([
+            label.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: containerView.centerYAnchor)
+        ])
+        
+        let dividerOne = UIView()
+        dividerOne.backgroundColor =  UIColor(white: 1, alpha: 0.25)
+        containerView.addSubview(dividerOne)
+        
+        NSLayoutConstraint.pin([
+            dividerOne.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+            dividerOne.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 8),
+            dividerOne.trailingAnchor.constraint(equalTo: label.leadingAnchor, constant: -8),
+            dividerOne.heightAnchor.constraint(equalToConstant: 1)
+        ])
+        
+        let dividerTwo = UIView()
+        dividerTwo.backgroundColor =  UIColor(white: 1, alpha: 0.25)
+        containerView.addSubview(dividerTwo)
+        
+        NSLayoutConstraint.pin([
+            dividerTwo.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+            dividerTwo.leadingAnchor.constraint(equalTo: label.trailingAnchor, constant: 8),
+            dividerTwo.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -8),
+            dividerTwo.heightAnchor.constraint(equalToConstant: 1)
+        ])
+        return containerView
+    }
 }

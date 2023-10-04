@@ -5,9 +5,12 @@ final class HomeViewController: UIViewController {
     private lazy var iconImage = Utils.makeImage()
     private lazy var stackView = Utils.makeVerticalStackView()
     private lazy var emailTextField = Utils.makeTextField(placeholder: "Email")
+    
     private lazy var passwordTextField = Utils.makeTextField(placeholder: "Password", isSecureTextEntry: true)
     private lazy var loginButton = Utils.makeButton(title: "Login", selector: #selector(didLogin))
     private lazy var forgotPasswordButton = Utils.makeForgotPassword(regularTitle: "Forgot your password? ", boldTitle: "Get help signing in")
+    
+    private lazy var divider = Utils.makeDivider(text: "OR")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +34,8 @@ extension HomeViewController: ViewConfig {
         stackView.addArrangedSubview(passwordTextField)
         stackView.addArrangedSubview(loginButton)
         stackView.addArrangedSubview(forgotPasswordButton)
+        stackView.addArrangedSubview(divider)
+        
         view.addSubview(stackView)
     }
     
