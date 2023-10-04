@@ -30,20 +30,29 @@ enum Utils {
         return textField
     }
     
-    static func makeButton(title: String, selector: Selector) -> UIButton {
+    static func makeButton(
+        icon: UIImage? = UIImage(),
+        textColor: UIColor = .white,
+        radius: CGFloat = 6,
+        title: String? = String(),
+        selector: Selector,
+        font: UIFont,
+        backgroundColor: UIColor = .purple.withAlphaComponent(0.2)
+    ) -> UIButton {
+        
         let button = UIButton()
+        button.setImage(icon, for: .normal)
         button.setTitle(title, for: .normal)
         button.setTitleColor(UIColor(white: 1, alpha: 0.67), for: .normal)
-        button.titleLabel?.font = .boldSystemFont(ofSize: 18)
-        button.titleLabel?.textColor = .white
-        button.layer.cornerRadius = 6
-        button.backgroundColor = .purple.withAlphaComponent(0.2)
+        button.titleLabel?.font = font
+        button.titleLabel?.textColor = textColor
+        button.layer.cornerRadius = radius
+        button.backgroundColor = backgroundColor
         button.addTarget(self, action: selector, for: .touchUpInside)
-        button.isEnabled = false
         return button
     }
     
-    static func makeForgotPassword(regularTitle: String, boldTitle: String) -> UIButton {
+    static func makeForgotPassword(regularTitle: String, boldTitle: String, selector: Selector) -> UIButton {
         let button = UIButton(type: .system)
         button.titleLabel?.textAlignment = .center
         let atts: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1, alpha: 0.80), .font: UIFont.systemFont(ofSize: 15)]
@@ -51,6 +60,7 @@ enum Utils {
         let boldAtts: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1, alpha: 0.80), .font: UIFont.boldSystemFont(ofSize: 15)]
         attributedTitle.append(NSAttributedString(string: boldTitle, attributes: boldAtts))
         button.setAttributedTitle(attributedTitle, for: .normal)
+        button.addTarget(self, action: selector, for: .touchUpInside)
         return button
     }
     

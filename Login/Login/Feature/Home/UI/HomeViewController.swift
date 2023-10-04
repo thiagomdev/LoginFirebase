@@ -7,10 +7,18 @@ final class HomeViewController: UIViewController {
     private lazy var emailTextField = Utils.makeTextField(placeholder: "Email")
     
     private lazy var passwordTextField = Utils.makeTextField(placeholder: "Password", isSecureTextEntry: true)
-    private lazy var loginButton = Utils.makeButton(title: "Login", selector: #selector(didLogin))
-    private lazy var forgotPasswordButton = Utils.makeForgotPassword(regularTitle: "Forgot your password? ", boldTitle: "Get help signing in")
+    private lazy var loginButton = Utils.makeButton(title: "Login", selector: #selector(didLogin), font: .boldSystemFont(ofSize: 18))
+    private lazy var forgotPasswordButton = Utils.makeForgotPassword(regularTitle: "Forgot your password? ", boldTitle: "Get help signing in", selector: #selector(handleForgotPassword))
     
     private lazy var divider = Utils.makeDivider(text: "OR")
+    
+    private lazy var googleLoginButton = Utils.makeButton(
+        icon: UIImage(named: "google"),
+        title: "  Log in with Google",
+        selector: #selector(handleGoogleLogin),
+        font: .boldSystemFont(ofSize: 16),
+        backgroundColor: .clear
+    )
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +29,17 @@ final class HomeViewController: UIViewController {
 extension HomeViewController {
     @objc
     private func didLogin() {
-        
+        print("DEBUG: Did tap login button..")
+    }
+    
+    @objc
+    private func handleForgotPassword() {
+        print("DEBUG: Did tap ForgotPassword button..")
+    }
+    
+    @objc
+    private func handleGoogleLogin() {
+        print("DEBUG: Did tap GoogleLogin button..")
     }
 }
 
@@ -35,6 +53,7 @@ extension HomeViewController: ViewConfig {
         stackView.addArrangedSubview(loginButton)
         stackView.addArrangedSubview(forgotPasswordButton)
         stackView.addArrangedSubview(divider)
+        stackView.addArrangedSubview(googleLoginButton)
         
         view.addSubview(stackView)
     }
