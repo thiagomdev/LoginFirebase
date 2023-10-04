@@ -12,39 +12,13 @@ final class HomeViewController: UIViewController {
     private lazy var stackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.spacing = 18
+        stack.spacing = 16
         return stack
     }()
     
-    private lazy var emailTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Email"
-        textField.textAlignment = .left
-        textField.borderStyle = .roundedRect
-        textField.autocorrectionType = .no
-        textField.textColor = .white
-        textField.keyboardAppearance = .dark
-        textField.clearButtonMode = .whileEditing
-        textField.backgroundColor = .init(white: 1, alpha: 0.1)
-        textField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [.foregroundColor: UIColor(white: 1.0, alpha: 0.7)])
-        return textField
-    }()
-    
-    private lazy var passwordTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Password"
-        textField.textAlignment = .justified
-        textField.borderStyle = .roundedRect
-        textField.autocorrectionType = .no
-        textField.textColor = .white
-        textField.keyboardAppearance = .dark
-        textField.isSecureTextEntry = true
-        textField.backgroundColor = .init(white: 1, alpha: 0.1)
-        textField.clearButtonMode = .whileEditing
-        textField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [.foregroundColor: UIColor(white: 1.0, alpha: 0.7)])
-        return textField
-    }()
-    
+    private lazy var emailTextField = Utils.makeTextField(placeholder: "Email")
+    private lazy var passwordTextField = Utils.makeTextField(placeholder: "Password", isSecureTextEntry: true)
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -64,7 +38,7 @@ extension HomeViewController: ViewConfig {
     
     func pin() {
         NSLayoutConstraint.pin([
-            iconImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32),
+            iconImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             iconImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             iconImage.heightAnchor.constraint(equalToConstant: 120),
             iconImage.widthAnchor.constraint(equalToConstant: 120),
@@ -73,8 +47,8 @@ extension HomeViewController: ViewConfig {
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
             
-            emailTextField.heightAnchor.constraint(equalToConstant: 50),
-            passwordTextField.heightAnchor.constraint(equalToConstant: 50)
+            emailTextField.heightAnchor.constraint(equalToConstant: 48),
+            passwordTextField.heightAnchor.constraint(equalToConstant: 48)
         ])
     }
     
