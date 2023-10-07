@@ -16,6 +16,7 @@
 		AADF71D62ACD8A2800A49530 /* NSLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADF71D42ACD8A2800A49530 /* NSLayout+Extension.swift */; };
 		AADF71D82ACD900100A49530 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADF71D72ACD900100A49530 /* Utils.swift */; };
 		AAFAA8622AD1DD59008DEBB6 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA8612AD1DD59008DEBB6 /* UIStackView+Extension.swift */; };
+		AAFAA8682AD1E12D008DEBB6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA8672AD1E12D008DEBB6 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		AADF71D42ACD8A2800A49530 /* NSLayout+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayout+Extension.swift"; sourceTree = "<group>"; };
 		AADF71D72ACD900100A49530 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		AAFAA8612AD1DD59008DEBB6 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
+		AAFAA8672AD1E12D008DEBB6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				AADF71CD2ACD87C100A49530 /* Login */,
+				AAFAA8632AD1E0E4008DEBB6 /* SignUp */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -146,6 +149,30 @@
 				AAFAA8612AD1DD59008DEBB6 /* UIStackView+Extension.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		AAFAA8632AD1E0E4008DEBB6 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				AAFAA8652AD1E103008DEBB6 /* Presentation */,
+				AAFAA8642AD1E0F0008DEBB6 /* UI */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		AAFAA8642AD1E0F0008DEBB6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				AAFAA8672AD1E12D008DEBB6 /* SignUpViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		AAFAA8652AD1E103008DEBB6 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +247,7 @@
 			files = (
 				AADF71D52ACD8A2800A49530 /* ViewConfig.swift in Sources */,
 				AAFAA8622AD1DD59008DEBB6 /* UIStackView+Extension.swift in Sources */,
+				AAFAA8682AD1E12D008DEBB6 /* SignUpViewController.swift in Sources */,
 				AADF71D62ACD8A2800A49530 /* NSLayout+Extension.swift in Sources */,
 				AADF71BB2ACD86DD00A49530 /* HomeViewController.swift in Sources */,
 				AADF71B72ACD86DD00A49530 /* AppDelegate.swift in Sources */,
