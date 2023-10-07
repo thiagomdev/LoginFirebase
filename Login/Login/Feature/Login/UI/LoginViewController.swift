@@ -122,4 +122,3 @@ extension LoginViewController {
         gradient.frame = view.frame
     }
 }
-
