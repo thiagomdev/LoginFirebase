@@ -25,6 +25,8 @@
 		AAFAA8782AD1ECE3008DEBB6 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA8772AD1ECE3008DEBB6 /* SessionManager.swift */; };
 		AAFAA87B2AD1F6AB008DEBB6 /* VirtualProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA87A2AD1F6AB008DEBB6 /* VirtualProxy.swift */; };
 		AAFAA8802AD1FE27008DEBB6 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA87F2AD1FE27008DEBB6 /* ResetPasswordViewController.swift */; };
+		AAFAA8832AD200E4008DEBB6 /* ResetPasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA8822AD200E4008DEBB6 /* ResetPasswordCoordinator.swift */; };
+		AAFAA8852AD20337008DEBB6 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA8842AD20337008DEBB6 /* ResetPasswordViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		AAFAA8772AD1ECE3008DEBB6 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		AAFAA87A2AD1F6AB008DEBB6 /* VirtualProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualProxy.swift; sourceTree = "<group>"; };
 		AAFAA87F2AD1FE27008DEBB6 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		AAFAA8822AD200E4008DEBB6 /* ResetPasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordCoordinator.swift; sourceTree = "<group>"; };
+		AAFAA8842AD20337008DEBB6 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +84,9 @@
 		AADF71B52ACD86DD00A49530 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				AAFAA8792AD1ED98008DEBB6 /* Coordinating */,
-				AADF71D22ACD8A1B00A49530 /* Core */,
 				AADF71CC2ACD879D00A49530 /* Start */,
+				AADF71D22ACD8A1B00A49530 /* Core */,
+				AAFAA8792AD1ED98008DEBB6 /* Coordinating */,
 				AADF71CB2ACD879B00A49530 /* Feature */,
 				AADF71CA2ACD879900A49530 /* SupportingFiles */,
 			);
@@ -123,8 +127,8 @@
 			children = (
 				AAFAA8712AD1E5BC008DEBB6 /* Coordinator */,
 				AADF71D12ACD87D200A49530 /* Domain */,
-				AADF71D02ACD87CC00A49530 /* Service */,
 				AADF71CF2ACD87CA00A49530 /* Presentation */,
+				AADF71D02ACD87CC00A49530 /* Service */,
 				AADF71CE2ACD87C800A49530 /* UI */,
 			);
 			path = Login;
@@ -163,10 +167,9 @@
 		AADF71D22ACD8A1B00A49530 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				AADF71D42ACD8A2800A49530 /* NSLayout+Extension.swift */,
-				AAFAA8612AD1DD59008DEBB6 /* UIStackView+Extension.swift */,
-				AADF71D72ACD900100A49530 /* Utils.swift */,
-				AADF71D32ACD8A2800A49530 /* ViewConfig.swift */,
+				AAFAA8872AD203B7008DEBB6 /* Extensions */,
+				AAFAA8862AD203A1008DEBB6 /* Utils */,
+				AAFAA8882AD203C1008DEBB6 /* ViewConfig */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 		AAFAA87C2AD1FD1C008DEBB6 /* ResetPassword */ = {
 			isa = PBXGroup;
 			children = (
+				AAFAA8812AD20022008DEBB6 /* Coordinator */,
 				AAFAA87E2AD1FE05008DEBB6 /* Presentation */,
 				AAFAA87D2AD1FE02008DEBB6 /* UI */,
 			);
@@ -243,8 +247,42 @@
 		AAFAA87E2AD1FE05008DEBB6 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				AAFAA8842AD20337008DEBB6 /* ResetPasswordViewModel.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		AAFAA8812AD20022008DEBB6 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				AAFAA8822AD200E4008DEBB6 /* ResetPasswordCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		AAFAA8862AD203A1008DEBB6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AADF71D72ACD900100A49530 /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		AAFAA8872AD203B7008DEBB6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AADF71D42ACD8A2800A49530 /* NSLayout+Extension.swift */,
+				AAFAA8612AD1DD59008DEBB6 /* UIStackView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AAFAA8882AD203C1008DEBB6 /* ViewConfig */ = {
+			isa = PBXGroup;
+			children = (
+				AADF71D32ACD8A2800A49530 /* ViewConfig.swift */,
+			);
+			path = ViewConfig;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,10 +361,12 @@
 				AAFAA8802AD1FE27008DEBB6 /* ResetPasswordViewController.swift in Sources */,
 				AAFAA86C2AD1E399008DEBB6 /* SignUpViewModel.swift in Sources */,
 				AAFAA8742AD1E5D8008DEBB6 /* LoginCoordinator.swift in Sources */,
+				AAFAA8832AD200E4008DEBB6 /* ResetPasswordCoordinator.swift in Sources */,
 				AAFAA8682AD1E12D008DEBB6 /* SignUpViewController.swift in Sources */,
 				AADF71D62ACD8A2800A49530 /* NSLayout+Extension.swift in Sources */,
 				AADF71BB2ACD86DD00A49530 /* LoginViewController.swift in Sources */,
 				AAFAA87B2AD1F6AB008DEBB6 /* VirtualProxy.swift in Sources */,
+				AAFAA8852AD20337008DEBB6 /* ResetPasswordViewModel.swift in Sources */,
 				AAFAA8782AD1ECE3008DEBB6 /* SessionManager.swift in Sources */,
 				AAFAA8762AD1E60D008DEBB6 /* SignUpCoordinator.swift in Sources */,
 				AAFAA86E2AD1E472008DEBB6 /* Coordinator.swift in Sources */,

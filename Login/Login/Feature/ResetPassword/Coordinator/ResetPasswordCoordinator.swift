@@ -1,12 +1,10 @@
 import UIKit
 
-protocol SignUpCoordinating: AnyObject {
+protocol ResetPasswordCoordinating {
     func start()
-    func login()
-    func resetPassword()
 }
 
-final class SignUpCoordinator {
+final class ResetPasswordCoordinator {
     let window: UIWindow
     var navigationController: UINavigationController
     var rootViewController: UIViewController?
@@ -23,20 +21,12 @@ final class SignUpCoordinator {
     }
 }
 
-extension SignUpCoordinator: SignUpCoordinating {
+extension ResetPasswordCoordinator: ResetPasswordCoordinating {
     func start() {
-        let signUp = SignUpViewController()
-        signUp.coordinator = self
+        let reset = ResetPasswordViewController()
+        reset.coordinator = self
 
-        window.rootViewController = signUp
+        window.rootViewController = reset
         window.makeKeyAndVisible()
-    }
-    
-    func login() {
-        loginCoordinator?.start()
-    }
-    
-    func resetPassword() {
-        loginCoordinator?.start()
     }
 }

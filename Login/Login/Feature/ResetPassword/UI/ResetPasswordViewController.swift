@@ -2,6 +2,8 @@ import UIKit
 
 final class ResetPasswordViewController: UIViewController {
 
+    var coordinator: ResetPasswordCoordinator?
+    
     private lazy var iconImage = Utils.makeImage()
     private lazy var stackView = Utils.makeVerticalStackView()
     private lazy var resetPasswordTextField = Utils.makeTextField(placeholder: "Reset password")
@@ -26,7 +28,7 @@ final class ResetPasswordViewController: UIViewController {
 extension ResetPasswordViewController {
     @objc
     private func didResetPassword() {
-        print("DEBUG: Did tap login button..")
+        print("DEBUG: Did tap reset password button..")
     }
 }
 

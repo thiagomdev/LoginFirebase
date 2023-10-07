@@ -50,13 +50,12 @@ final class LoginViewController: UIViewController {
 extension LoginViewController {
     @objc
     private func didLogin() {
-//        SessionManager.shared.startSession()
-        coordinator?.signUp()
         print("DEBUG: Did tap login button..")
     }
     
     @objc
     private func handleForgotPassword() {
+        coordinator?.resetPassword()
         print("DEBUG: Did tap ForgotPassword button..")
     }
     
@@ -67,6 +66,7 @@ extension LoginViewController {
     
     @objc
     private func handleSignUp() {
+        coordinator?.signUp()
         print("DEBUG: Did tap SignUp button..")
     }
 }

@@ -10,4 +10,8 @@ final class LoginCoordinatorVirtualProxy: LoginCoordinating {
     func signUp() {
         coordinating?.signUp()
     }
+    
+    func resetPassword() {
+        coordinating?.resetPassword()
+    }
 }

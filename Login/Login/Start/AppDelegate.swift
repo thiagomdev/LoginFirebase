@@ -27,10 +27,17 @@ extension AppDelegate {
             loginCoordinator: loginCoordinatorVirtualProxy
         )
         
+        let reset = ResetPasswordCoordinator(
+            window: window,
+            navigationController: navigation,
+            loginCoordinator: loginCoordinatorVirtualProxy
+        )
+        
         let login = LoginCoordinator(
             window: window,
             navigationController: navigation,
-            signUpCoordinator: signUp
+            signUpCoordinator: signUp, 
+            resetPasswordCoordinator: reset
         )
 
         appCoordinator = AppCoordinator(
