@@ -3,6 +3,17 @@ import UIKit
 final class LoginViewController: UIViewController {
     
     var coordinator: LoginCoordinator?
+    
+    private var buttonTitleColor: UIColor {
+        return viewModel.validation ? .white : UIColor(white: 1, alpha: 0.50)
+    }
+    
+    private var buttonBackgroundColor: UIColor {
+        let purple = UIColor.purple
+        let alpha = UIColor.purple.withAlphaComponent(0.5)
+        return viewModel.validation ? purple : alpha
+    }
+    
     private var viewModel: LoginViewModeling
     
     private lazy var iconImage = Utils.makeImage()
@@ -33,7 +44,8 @@ final class LoginViewController: UIViewController {
         title: "  Log in with Google",
         selector: #selector(handleGoogleLogin),
         font: .boldSystemFont(ofSize: 16),
-        backgroundColor: .clear
+        backgroundColor: .clear,
+        isEnable: true
     )
     
     private lazy var dontHaveAndAccoutButton = Utils.makeRegularAndBoldTitleButton(
@@ -90,6 +102,7 @@ extension LoginViewController {
             viewModel.model.password = sender.text
         }
         print("DEBUG: Validation \(viewModel.validation)")
+        updateValidationFields()
     }
 }
 
@@ -135,6 +148,7 @@ extension LoginViewController: ViewConfig {
     
     func configUI() {
         setTextFieldObservers()
+        
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.barStyle = .black
     }
@@ -152,5 +166,11 @@ extension LoginViewController {
     private func setTextFieldObservers() {
         emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+    }
+    
+    private func updateValidationFields() {
+        loginButton.isEnabled = viewModel.shouldEnableButton
+        loginButton.backgroundColor = buttonBackgroundColor
+        loginButton.setTitleColor(buttonTitleColor, for: .normal)
     }
 }

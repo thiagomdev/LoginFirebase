@@ -3,6 +3,7 @@ import Foundation
 protocol LoginViewModeling {
     var model: UserLogin { get set }
     var validation: Bool { get }
+    var shouldEnableButton: Bool { get }
 }
 
 final class LoginViewModel {
@@ -21,5 +22,9 @@ extension LoginViewModel: LoginViewModeling {
     
     var validation: Bool {
         return user.email?.isEmpty == false && user.password?.isEmpty == false
+    }
+    
+    var shouldEnableButton: Bool {
+        return validation
     }
 }
