@@ -37,17 +37,19 @@ enum Utils {
         title: String? = String(),
         selector: Selector,
         font: UIFont,
-        backgroundColor: UIColor = .purple.withAlphaComponent(0.2)
+        backgroundColor: UIColor = .purple.withAlphaComponent(0.5),
+        isEnable: Bool = false
     ) -> UIButton {
         
         let button = UIButton()
         button.setImage(icon, for: .normal)
         button.setTitle(title, for: .normal)
-        button.setTitleColor(UIColor(white: 1, alpha: 0.67), for: .normal)
+        button.setTitleColor(UIColor(white: 1, alpha: 0.50), for: .normal)
         button.titleLabel?.font = font
         button.titleLabel?.textColor = textColor
         button.layer.cornerRadius = radius
         button.backgroundColor = backgroundColor
+        button.isEnabled = isEnable
         button.addTarget(self, action: selector, for: .touchUpInside)
         return button
     }
