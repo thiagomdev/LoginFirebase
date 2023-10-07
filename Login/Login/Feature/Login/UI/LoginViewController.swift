@@ -2,6 +2,8 @@ import UIKit
 
 final class LoginViewController: UIViewController {
     
+    var coordinator: LoginCoordinator?
+    
     private lazy var iconImage = Utils.makeImage()
     private lazy var stackView = Utils.makeVerticalStackView()
     private lazy var emailTextField = Utils.makeTextField(placeholder: "Email")
@@ -48,6 +50,8 @@ final class LoginViewController: UIViewController {
 extension LoginViewController {
     @objc
     private func didLogin() {
+//        SessionManager.shared.startSession()
+        coordinator?.signUp()
         print("DEBUG: Did tap login button..")
     }
     

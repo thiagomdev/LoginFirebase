@@ -2,6 +2,8 @@ import UIKit
 
 final class SignUpViewController: UIViewController {
     
+    var coordinator: SignUpCoordinator?
+    
     private lazy var iconImage = Utils.makeImage()
     private lazy var stackView = Utils.makeVerticalStackView()
     
@@ -39,10 +41,12 @@ extension SignUpViewController {
     @objc
     private func didSignUp() {
         print("DEBUG: Did tap login button..")
+        coordinator?.login()
     }
     
     @objc
     private func handleSignUp() {
+        coordinator?.login()
         print("DEBUG: Did tap SignUp button..")
     }
 }
