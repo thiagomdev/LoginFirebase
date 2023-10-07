@@ -5,9 +5,39 @@ final class HomeViewController: UIViewController {
     private lazy var iconImage = Utils.makeImage()
     private lazy var stackView = Utils.makeVerticalStackView()
     private lazy var emailTextField = Utils.makeTextField(placeholder: "Email")
-    private lazy var passwordTextField = Utils.makeTextField(placeholder: "Password", isSecureTextEntry: true)
-    private lazy var loginButton = Utils.makeButton(title: "Login", selector: #selector(didLogin))
-    private lazy var forgotPasswordButton = Utils.makeForgotPassword(regularTitle: "Forgot your password? ", boldTitle: "Get help signing in")
+    
+    private lazy var passwordTextField = Utils.makeTextField(
+        placeholder: "Password",
+        isSecureTextEntry: true
+    )
+    
+    private lazy var loginButton = Utils.makeButton(
+        title: "Login",
+        selector: #selector(didLogin),
+        font: .boldSystemFont(ofSize: 18)
+    )
+    
+    private lazy var forgotPasswordButton = Utils.makeRegularAndBoldTitleButton(
+        regularTitle: "Forgot your password? ",
+        boldTitle: "Get help signing in",
+        selector: #selector(handleForgotPassword)
+    )
+    
+    private lazy var divider = Utils.makeDivider(text: "OR")
+    
+    private lazy var googleLoginButton = Utils.makeButton(
+        icon: UIImage(named: "google"),
+        title: "  Log in with Google",
+        selector: #selector(handleGoogleLogin),
+        font: .boldSystemFont(ofSize: 16),
+        backgroundColor: .clear
+    )
+    
+    private lazy var dontHaveAndAccoutButton = Utils.makeRegularAndBoldTitleButton(
+        regularTitle: "Don't have an account?",
+        boldTitle: " Sign Up",
+        selector: #selector(handleSignUp)
+    )
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +48,22 @@ final class HomeViewController: UIViewController {
 extension HomeViewController {
     @objc
     private func didLogin() {
-        
+        print("DEBUG: Did tap login button..")
+    }
+    
+    @objc
+    private func handleForgotPassword() {
+        print("DEBUG: Did tap ForgotPassword button..")
+    }
+    
+    @objc
+    private func handleGoogleLogin() {
+        print("DEBUG: Did tap GoogleLogin button..")
+    }
+    
+    @objc
+    private func handleSignUp() {
+        print("DEBUG: Did tap SignUp button..")
     }
 }
 
@@ -27,11 +72,17 @@ extension HomeViewController: ViewConfig {
         createGradient()
         view.addSubview(iconImage)
         
-        stackView.addArrangedSubview(emailTextField)
-        stackView.addArrangedSubview(passwordTextField)
-        stackView.addArrangedSubview(loginButton)
-        stackView.addArrangedSubview(forgotPasswordButton)
+        stackView.addSubviews(
+            emailTextField,
+            passwordTextField,
+            loginButton,
+            forgotPasswordButton,
+            divider,
+            googleLoginButton
+        )
+
         view.addSubview(stackView)
+        view.addSubview(dontHaveAndAccoutButton)
     }
     
     func pin() {
@@ -48,7 +99,11 @@ extension HomeViewController: ViewConfig {
             emailTextField.heightAnchor.constraint(equalToConstant: 48),
             passwordTextField.heightAnchor.constraint(equalToConstant: 48),
             
-            loginButton.heightAnchor.constraint(equalToConstant: 48)
+            loginButton.heightAnchor.constraint(equalToConstant: 48),
+            
+            dontHaveAndAccoutButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16),
+            dontHaveAndAccoutButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            dontHaveAndAccoutButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
         ])
     }
     
