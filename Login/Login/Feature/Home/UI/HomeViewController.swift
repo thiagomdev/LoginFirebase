@@ -14,7 +14,7 @@ final class HomeViewController: UIViewController {
         font: .boldSystemFont(ofSize: 18)
     )
     
-    private lazy var forgotPasswordButton = Utils.makeForgotPassword(
+    private lazy var forgotPasswordButton = Utils.makeRegularAndBoldTitleButton(
         regularTitle: "Forgot your password? ",
         boldTitle: "Get help signing in",
         selector: #selector(handleForgotPassword)
@@ -28,6 +28,12 @@ final class HomeViewController: UIViewController {
         selector: #selector(handleGoogleLogin),
         font: .boldSystemFont(ofSize: 16),
         backgroundColor: .clear
+    )
+    
+    private lazy var dontHaveAndAccoutButton = Utils.makeRegularAndBoldTitleButton(
+        regularTitle: "Don't have an account?",
+        boldTitle: " Sign Up",
+        selector: #selector(handleSignUp)
     )
     
     override func viewDidLoad() {
@@ -51,6 +57,11 @@ extension HomeViewController {
     private func handleGoogleLogin() {
         print("DEBUG: Did tap GoogleLogin button..")
     }
+    
+    @objc
+    private func handleSignUp() {
+        print("DEBUG: Did tap SignUp button..")
+    }
 }
 
 extension HomeViewController: ViewConfig {
@@ -66,6 +77,7 @@ extension HomeViewController: ViewConfig {
         stackView.addArrangedSubview(googleLoginButton)
         
         view.addSubview(stackView)
+        view.addSubview(dontHaveAndAccoutButton)
     }
     
     func pin() {
@@ -82,7 +94,11 @@ extension HomeViewController: ViewConfig {
             emailTextField.heightAnchor.constraint(equalToConstant: 48),
             passwordTextField.heightAnchor.constraint(equalToConstant: 48),
             
-            loginButton.heightAnchor.constraint(equalToConstant: 48)
+            loginButton.heightAnchor.constraint(equalToConstant: 48),
+            
+            dontHaveAndAccoutButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16),
+            dontHaveAndAccoutButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            dontHaveAndAccoutButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
         ])
     }
     

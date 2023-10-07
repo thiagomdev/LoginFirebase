@@ -52,7 +52,7 @@ enum Utils {
         return button
     }
     
-    static func makeForgotPassword(regularTitle: String, boldTitle: String, selector: Selector) -> UIButton {
+    static func makeRegularAndBoldTitleButton(regularTitle: String, boldTitle: String, selector: Selector) -> UIButton {
         let button = UIButton(type: .system)
         button.titleLabel?.textAlignment = .center
         let atts: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1, alpha: 0.80), .font: UIFont.systemFont(ofSize: 15)]
