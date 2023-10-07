@@ -3,19 +3,8 @@ import UIKit
 final class LoginViewController: UIViewController {
     
     var coordinator: LoginCoordinator?
-    
-    private var buttonTitleColor: UIColor {
-        return viewModel.validation ? .white : UIColor(white: 1, alpha: 0.50)
-    }
-    
-    private var buttonBackgroundColor: UIColor {
-        let purple = UIColor.purple
-        let alpha = UIColor.purple.withAlphaComponent(0.5)
-        return viewModel.validation ? purple : alpha
-    }
-    
+
     private var viewModel: LoginViewModeling
-    
     private lazy var iconImage = Utils.makeImage()
     private lazy var stackView = Utils.makeVerticalStackView()
     private lazy var emailTextField = Utils.makeTextField(placeholder: "Email")
@@ -106,6 +95,39 @@ extension LoginViewController {
     }
 }
 
+extension LoginViewController: Authentication {
+    var buttonTitleColor: UIColor {
+        return viewModel.validation ? .white : UIColor(white: 1, alpha: 0.50)
+    }
+    
+    var buttonBackgroundColor: UIColor {
+        let purple = UIColor.purple
+        let alpha = UIColor.purple.withAlphaComponent(0.5)
+        return viewModel.validation ? purple : alpha
+    }
+}
+
+extension LoginViewController {
+    private func createGradient() {
+        let gradient = CAGradientLayer()
+        gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemBlue.cgColor]
+        gradient.locations = [0, 1]
+        view.layer.addSublayer(gradient)
+        gradient.frame = view.frame
+    }
+    
+    private func setTextFieldObservers() {
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+    }
+    
+    private func updateValidationFields() {
+        loginButton.isEnabled = viewModel.shouldEnableButton
+        loginButton.backgroundColor = buttonBackgroundColor
+        loginButton.setTitleColor(buttonTitleColor, for: .normal)
+    }
+}
+
 extension LoginViewController: ViewConfig {
     func buildViews() {
         createGradient()
@@ -148,29 +170,7 @@ extension LoginViewController: ViewConfig {
     
     func configUI() {
         setTextFieldObservers()
-        
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.barStyle = .black
-    }
-}
-
-extension LoginViewController {
-    private func createGradient() {
-        let gradient = CAGradientLayer()
-        gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemBlue.cgColor]
-        gradient.locations = [0, 1]
-        view.layer.addSublayer(gradient)
-        gradient.frame = view.frame
-    }
-    
-    private func setTextFieldObservers() {
-        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
-        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
-    }
-    
-    private func updateValidationFields() {
-        loginButton.isEnabled = viewModel.shouldEnableButton
-        loginButton.backgroundColor = buttonBackgroundColor
-        loginButton.setTitleColor(buttonTitleColor, for: .normal)
     }
 }

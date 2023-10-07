@@ -28,6 +28,7 @@
 		AAFAA8832AD200E4008DEBB6 /* ResetPasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA8822AD200E4008DEBB6 /* ResetPasswordCoordinator.swift */; };
 		AAFAA8852AD20337008DEBB6 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA8842AD20337008DEBB6 /* ResetPasswordViewModel.swift */; };
 		AAFAA88A2AD20657008DEBB6 /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA8892AD20657008DEBB6 /* UserLogin.swift */; };
+		AAFAA88D2AD21E88008DEBB6 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA88C2AD21E88008DEBB6 /* Authentication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		AAFAA8822AD200E4008DEBB6 /* ResetPasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordCoordinator.swift; sourceTree = "<group>"; };
 		AAFAA8842AD20337008DEBB6 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		AAFAA8892AD20657008DEBB6 /* UserLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
+		AAFAA88C2AD21E88008DEBB6 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 		AADF71D22ACD8A1B00A49530 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				AAFAA88B2AD21E71008DEBB6 /* Authentication */,
 				AAFAA8872AD203B7008DEBB6 /* Extensions */,
 				AAFAA8862AD203A1008DEBB6 /* Utils */,
 				AAFAA8882AD203C1008DEBB6 /* ViewConfig */,
@@ -288,6 +291,14 @@
 			path = ViewConfig;
 			sourceTree = "<group>";
 		};
+		AAFAA88B2AD21E71008DEBB6 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				AAFAA88C2AD21E88008DEBB6 /* Authentication.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -361,6 +372,7 @@
 				AAFAA8702AD1E54A008DEBB6 /* AppCoordinator.swift in Sources */,
 				AADF71D52ACD8A2800A49530 /* ViewConfig.swift in Sources */,
 				AAFAA8622AD1DD59008DEBB6 /* UIStackView+Extension.swift in Sources */,
+				AAFAA88D2AD21E88008DEBB6 /* Authentication.swift in Sources */,
 				AAFAA8802AD1FE27008DEBB6 /* ResetPasswordViewController.swift in Sources */,
 				AAFAA86C2AD1E399008DEBB6 /* SignUpViewModel.swift in Sources */,
 				AAFAA8742AD1E5D8008DEBB6 /* LoginCoordinator.swift in Sources */,
