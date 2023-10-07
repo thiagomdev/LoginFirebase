@@ -161,9 +161,9 @@
 			isa = PBXGroup;
 			children = (
 				AADF71D42ACD8A2800A49530 /* NSLayout+Extension.swift */,
+				AAFAA8612AD1DD59008DEBB6 /* UIStackView+Extension.swift */,
 				AADF71D72ACD900100A49530 /* Utils.swift */,
 				AADF71D32ACD8A2800A49530 /* ViewConfig.swift */,
-				AAFAA8612AD1DD59008DEBB6 /* UIStackView+Extension.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -213,8 +213,8 @@
 		AAFAA8792AD1ED98008DEBB6 /* Coordinating */ = {
 			isa = PBXGroup;
 			children = (
-				AAFAA8772AD1ECE3008DEBB6 /* SessionManager.swift */,
 				AAFAA86D2AD1E472008DEBB6 /* Coordinator.swift */,
+				AAFAA8772AD1ECE3008DEBB6 /* SessionManager.swift */,
 				AAFAA87A2AD1F6AB008DEBB6 /* VirtualProxy.swift */,
 			);
 			path = Coordinating;

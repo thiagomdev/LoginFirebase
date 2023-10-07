@@ -26,7 +26,7 @@ extension SignUpCoordinator: SignUpCoordinating {
     func start() {
         let signUp = SignUpViewController()
         signUp.coordinator = self
-        
+
         window.rootViewController = signUp
         window.makeKeyAndVisible()
     }
