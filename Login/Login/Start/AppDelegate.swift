@@ -9,7 +9,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        return run()
+    }
+}
 
+extension AppDelegate {
+    private func run() -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
         
@@ -37,17 +42,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         appCoordinator?.start()
         return true
-    }
-}
-
-final class LoginCoordinatorVirtualProxy: LoginCoordinating {
-    weak var coordinating: LoginCoordinating?
-    
-    func start() {
-        coordinating?.start()
-    }
-    
-    func signUp() {
-        coordinating?.signUp()
     }
 }
