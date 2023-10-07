@@ -1,6 +1,9 @@
 import UIKit
 
-final class HomeViewController: UIViewController {
+final class LoginViewController: UIViewController {
+    
+    var coordinator: LoginCoordinator?
+    private var viewModel: LoginViewModeling
     
     private lazy var iconImage = Utils.makeImage()
     private lazy var stackView = Utils.makeVerticalStackView()
@@ -39,13 +42,22 @@ final class HomeViewController: UIViewController {
         selector: #selector(handleSignUp)
     )
     
+    init(viewModel: LoginViewModeling =  LoginViewModel()) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
     }
 }
 
-extension HomeViewController {
+extension LoginViewController {
     @objc
     private func didLogin() {
         print("DEBUG: Did tap login button..")
@@ -53,6 +65,7 @@ extension HomeViewController {
     
     @objc
     private func handleForgotPassword() {
+        coordinator?.resetPassword()
         print("DEBUG: Did tap ForgotPassword button..")
     }
     
@@ -63,11 +76,24 @@ extension HomeViewController {
     
     @objc
     private func handleSignUp() {
+        coordinator?.signUp()
         print("DEBUG: Did tap SignUp button..")
+    }
+    
+    @objc
+    private func textDidChange(_ sender: UITextField) {
+        if sender == emailTextField {
+            viewModel.model.email = sender.text
+            print("DEBUG: Email \(String(describing: sender.text))")
+        } else {
+            print("DEBUG: Password \(String(describing: sender.text))")
+            viewModel.model.password = sender.text
+        }
+        print("DEBUG: Validation \(viewModel.validation)")
     }
 }
 
-extension HomeViewController: ViewConfig {
+extension LoginViewController: ViewConfig {
     func buildViews() {
         createGradient()
         view.addSubview(iconImage)
@@ -108,12 +134,13 @@ extension HomeViewController: ViewConfig {
     }
     
     func configUI() {
+        setTextFieldObservers()
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.barStyle = .black
     }
 }
 
-extension HomeViewController {
+extension LoginViewController {
     private func createGradient() {
         let gradient = CAGradientLayer()
         gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemBlue.cgColor]
@@ -121,5 +148,9 @@ extension HomeViewController {
         view.layer.addSublayer(gradient)
         gradient.frame = view.frame
     }
+    
+    private func setTextFieldObservers() {
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+    }
 }
-
