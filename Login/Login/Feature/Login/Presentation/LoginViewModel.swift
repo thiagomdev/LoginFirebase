@@ -21,7 +21,8 @@ extension LoginViewModel: LoginViewModeling {
     }
     
     var validation: Bool {
-        return user.email?.isEmpty == false && user.password?.isEmpty == false
+        return user.email?.isEmpty == false 
+        && user.password?.isEmpty == false
     }
     
     var shouldEnableButton: Bool {
