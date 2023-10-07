@@ -1,6 +1,6 @@
 import UIKit
 
-final class HomeViewController: UIViewController {
+final class LoginViewController: UIViewController {
     
     private lazy var iconImage = Utils.makeImage()
     private lazy var stackView = Utils.makeVerticalStackView()
@@ -45,7 +45,7 @@ final class HomeViewController: UIViewController {
     }
 }
 
-extension HomeViewController {
+extension LoginViewController {
     @objc
     private func didLogin() {
         print("DEBUG: Did tap login button..")
@@ -67,7 +67,7 @@ extension HomeViewController {
     }
 }
 
-extension HomeViewController: ViewConfig {
+extension LoginViewController: ViewConfig {
     func buildViews() {
         createGradient()
         view.addSubview(iconImage)
@@ -113,7 +113,7 @@ extension HomeViewController: ViewConfig {
     }
 }
 
-extension HomeViewController {
+extension LoginViewController {
     private func createGradient() {
         let gradient = CAGradientLayer()
         gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemBlue.cgColor]

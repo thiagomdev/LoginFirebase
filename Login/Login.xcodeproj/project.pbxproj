@@ -83,7 +83,7 @@
 		AADF71CB2ACD879B00A49530 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				AADF71CD2ACD87C100A49530 /* Home */,
+				AADF71CD2ACD87C100A49530 /* Login */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -97,7 +97,7 @@
 			path = Start;
 			sourceTree = "<group>";
 		};
-		AADF71CD2ACD87C100A49530 /* Home */ = {
+		AADF71CD2ACD87C100A49530 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				AADF71D12ACD87D200A49530 /* Domain */,
@@ -105,7 +105,7 @@
 				AADF71CF2ACD87CA00A49530 /* Presentation */,
 				AADF71CE2ACD87C800A49530 /* UI */,
 			);
-			path = Home;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		AADF71CE2ACD87C800A49530 /* UI */ = {
