@@ -27,6 +27,7 @@
 		AAFAA8802AD1FE27008DEBB6 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA87F2AD1FE27008DEBB6 /* ResetPasswordViewController.swift */; };
 		AAFAA8832AD200E4008DEBB6 /* ResetPasswordCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA8822AD200E4008DEBB6 /* ResetPasswordCoordinator.swift */; };
 		AAFAA8852AD20337008DEBB6 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA8842AD20337008DEBB6 /* ResetPasswordViewModel.swift */; };
+		AAFAA88A2AD20657008DEBB6 /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA8892AD20657008DEBB6 /* UserLogin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		AAFAA87F2AD1FE27008DEBB6 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		AAFAA8822AD200E4008DEBB6 /* ResetPasswordCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordCoordinator.swift; sourceTree = "<group>"; };
 		AAFAA8842AD20337008DEBB6 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
+		AAFAA8892AD20657008DEBB6 /* UserLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 		AADF71D12ACD87D200A49530 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				AAFAA8892AD20657008DEBB6 /* UserLogin.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				AADF71B72ACD86DD00A49530 /* AppDelegate.swift in Sources */,
 				AADF71D82ACD900100A49530 /* Utils.swift in Sources */,
 				AAFAA86A2AD1E360008DEBB6 /* LoginViewModel.swift in Sources */,
+				AAFAA88A2AD20657008DEBB6 /* UserLogin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

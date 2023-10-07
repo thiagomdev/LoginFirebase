@@ -3,6 +3,7 @@ import UIKit
 final class LoginViewController: UIViewController {
     
     var coordinator: LoginCoordinator?
+    private var viewModel: LoginViewModeling
     
     private lazy var iconImage = Utils.makeImage()
     private lazy var stackView = Utils.makeVerticalStackView()
@@ -41,6 +42,15 @@ final class LoginViewController: UIViewController {
         selector: #selector(handleSignUp)
     )
     
+    init(viewModel: LoginViewModeling =  LoginViewModel()) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -68,6 +78,18 @@ extension LoginViewController {
     private func handleSignUp() {
         coordinator?.signUp()
         print("DEBUG: Did tap SignUp button..")
+    }
+    
+    @objc
+    private func textDidChange(_ sender: UITextField) {
+        if sender == emailTextField {
+            viewModel.model.email = sender.text
+            print("DEBUG: Email \(String(describing: sender.text))")
+        } else {
+            print("DEBUG: Password \(String(describing: sender.text))")
+            viewModel.model.password = sender.text
+        }
+        print("DEBUG: Validation \(viewModel.validation)")
     }
 }
 
@@ -112,6 +134,7 @@ extension LoginViewController: ViewConfig {
     }
     
     func configUI() {
+        setTextFieldObservers()
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.barStyle = .black
     }
@@ -124,5 +147,10 @@ extension LoginViewController {
         gradient.locations = [0, 1]
         view.layer.addSublayer(gradient)
         gradient.frame = view.frame
+    }
+    
+    private func setTextFieldObservers() {
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
 }
