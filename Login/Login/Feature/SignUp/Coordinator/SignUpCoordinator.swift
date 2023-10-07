@@ -28,8 +28,15 @@ extension SignUpCoordinator: SignUpCoordinating {
         let signUp = SignUpViewController()
         signUp.coordinator = self
 
-        window.rootViewController = signUp
-        window.makeKeyAndVisible()
+        UIView.transition(
+            with: window,
+            duration: 0.7,
+            options: .transitionCrossDissolve,
+            animations: { [weak self] in
+                self?.window.rootViewController = signUp
+                self?.window.makeKeyAndVisible()
+                self?.window.layoutSubviews()
+        })
     }
     
     func login() {

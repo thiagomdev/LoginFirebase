@@ -26,7 +26,14 @@ extension ResetPasswordCoordinator: ResetPasswordCoordinating {
         let reset = ResetPasswordViewController()
         reset.coordinator = self
 
-        window.rootViewController = reset
-        window.makeKeyAndVisible()
+        UIView.transition(
+            with: window,
+            duration: 0.7,
+            options: .transitionCrossDissolve,
+            animations: { [weak self] in
+                self?.window.rootViewController = reset
+                self?.window.makeKeyAndVisible()
+                self?.window.layoutSubviews()
+        })
     }
 }
