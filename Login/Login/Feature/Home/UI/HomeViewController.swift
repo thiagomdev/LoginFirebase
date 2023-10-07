@@ -6,7 +6,10 @@ final class HomeViewController: UIViewController {
     private lazy var stackView = Utils.makeVerticalStackView()
     private lazy var emailTextField = Utils.makeTextField(placeholder: "Email")
     
-    private lazy var passwordTextField = Utils.makeTextField(placeholder: "Password", isSecureTextEntry: true)
+    private lazy var passwordTextField = Utils.makeTextField(
+        placeholder: "Password",
+        isSecureTextEntry: true
+    )
     
     private lazy var loginButton = Utils.makeButton(
         title: "Login",
@@ -69,13 +72,15 @@ extension HomeViewController: ViewConfig {
         createGradient()
         view.addSubview(iconImage)
         
-        stackView.addArrangedSubview(emailTextField)
-        stackView.addArrangedSubview(passwordTextField)
-        stackView.addArrangedSubview(loginButton)
-        stackView.addArrangedSubview(forgotPasswordButton)
-        stackView.addArrangedSubview(divider)
-        stackView.addArrangedSubview(googleLoginButton)
-        
+        stackView.addSubviews(
+            emailTextField,
+            passwordTextField,
+            loginButton,
+            forgotPasswordButton,
+            divider,
+            googleLoginButton
+        )
+
         view.addSubview(stackView)
         view.addSubview(dontHaveAndAccoutButton)
     }

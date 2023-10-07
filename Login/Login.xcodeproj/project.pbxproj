@@ -15,6 +15,7 @@
 		AADF71D52ACD8A2800A49530 /* ViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADF71D32ACD8A2800A49530 /* ViewConfig.swift */; };
 		AADF71D62ACD8A2800A49530 /* NSLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADF71D42ACD8A2800A49530 /* NSLayout+Extension.swift */; };
 		AADF71D82ACD900100A49530 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADF71D72ACD900100A49530 /* Utils.swift */; };
+		AAFAA8622AD1DD59008DEBB6 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA8612AD1DD59008DEBB6 /* UIStackView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		AADF71D32ACD8A2800A49530 /* ViewConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewConfig.swift; sourceTree = "<group>"; };
 		AADF71D42ACD8A2800A49530 /* NSLayout+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayout+Extension.swift"; sourceTree = "<group>"; };
 		AADF71D72ACD900100A49530 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		AAFAA8612AD1DD59008DEBB6 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				AADF71D42ACD8A2800A49530 /* NSLayout+Extension.swift */,
 				AADF71D72ACD900100A49530 /* Utils.swift */,
 				AADF71D32ACD8A2800A49530 /* ViewConfig.swift */,
+				AAFAA8612AD1DD59008DEBB6 /* UIStackView+Extension.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AADF71D52ACD8A2800A49530 /* ViewConfig.swift in Sources */,
+				AAFAA8622AD1DD59008DEBB6 /* UIStackView+Extension.swift in Sources */,
 				AADF71D62ACD8A2800A49530 /* NSLayout+Extension.swift in Sources */,
 				AADF71BB2ACD86DD00A49530 /* HomeViewController.swift in Sources */,
 				AADF71B72ACD86DD00A49530 /* AppDelegate.swift in Sources */,
