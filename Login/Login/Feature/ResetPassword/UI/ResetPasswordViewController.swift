@@ -36,6 +36,22 @@ final class ResetPasswordViewController: UIViewController {
     }
 }
 
+extension ResetPasswordViewController {
+    @objc
+    private func didResetPassword() {
+        coordinator?.login()
+        print("DEBUG: Did tap reset password button..")
+    }
+    
+    @objc
+    private func textDidChange(_ sender: UITextField) {
+        if sender == resetPasswordTextField {
+            viewModel.model.email = sender.text
+        }
+        updateForm()
+    }
+}
+
 extension ResetPasswordViewController: Authentication {
     var buttonTitleColor: UIColor {
         return viewModel.validation ? .white : UIColor(white: 1, alpha: 0.50)
@@ -54,21 +70,9 @@ extension ResetPasswordViewController: ValidationForm {
         resetPasswordButton.backgroundColor = buttonBackgroundColor
         resetPasswordButton.setTitleColor(buttonTitleColor, for: .normal)
     }
-}
-
-extension ResetPasswordViewController {
-    @objc
-    private func didResetPassword() {
-        coordinator?.login()
-        print("DEBUG: Did tap reset password button..")
-    }
     
-    @objc
-    private func textDidChange(_ sender: UITextField) {
-        if sender == resetPasswordTextField {
-            viewModel.model.email = sender.text
-        }
-        updateForm()
+    func setObserves() {
+        resetPasswordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
 }
 
@@ -79,10 +83,6 @@ extension ResetPasswordViewController {
         gradient.locations = [0, 1]
         view.layer.addSublayer(gradient)
         gradient.frame = view.frame
-    }
-
-    private func setTextFieldObservers() {
-        resetPasswordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
 }
 
@@ -117,7 +117,7 @@ extension ResetPasswordViewController: ViewConfig {
     }
     
     func configUI() {
-        setTextFieldObservers()
+        setObserves()
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.barStyle = .black
     }

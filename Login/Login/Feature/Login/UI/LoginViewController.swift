@@ -58,14 +58,6 @@ final class LoginViewController: UIViewController {
     }
 }
 
-extension LoginViewController: ValidationForm {
-    func updateForm() {
-        loginButton.isEnabled = viewModel.shouldEnableButton
-        loginButton.backgroundColor = buttonBackgroundColor
-        loginButton.setTitleColor(buttonTitleColor, for: .normal)
-    }
-}
-
 extension LoginViewController {
     @objc
     private func didLogin() {
@@ -91,12 +83,9 @@ extension LoginViewController {
     private func textDidChange(_ sender: UITextField) {
         if sender == emailTextField {
             viewModel.model.email = sender.text
-            print("DEBUG: Email \(String(describing: sender.text))")
         } else {
-            print("DEBUG: Password \(String(describing: sender.text))")
             viewModel.model.password = sender.text
         }
-        print("DEBUG: Validation \(viewModel.validation)")
         updateForm()
     }
 }
@@ -113,6 +102,19 @@ extension LoginViewController: Authentication {
     }
 }
 
+extension LoginViewController: ValidationForm {
+    func updateForm() {
+        loginButton.isEnabled = viewModel.shouldEnableButton
+        loginButton.backgroundColor = buttonBackgroundColor
+        loginButton.setTitleColor(buttonTitleColor, for: .normal)
+    }
+    
+    func setObserves() {
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+    }
+}
+
 extension LoginViewController {
     private func createGradient() {
         let gradient = CAGradientLayer()
@@ -120,11 +122,6 @@ extension LoginViewController {
         gradient.locations = [0, 1]
         view.layer.addSublayer(gradient)
         gradient.frame = view.frame
-    }
-    
-    private func setTextFieldObservers() {
-        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
-        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
 }
 
@@ -169,7 +166,7 @@ extension LoginViewController: ViewConfig {
     }
     
     func configUI() {
-        setTextFieldObservers()
+        setObserves()
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.barStyle = .black
     }

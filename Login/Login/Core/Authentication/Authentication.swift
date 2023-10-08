@@ -7,4 +7,5 @@ protocol Authentication {
 
 protocol ValidationForm {
     func updateForm()
+    func setObserves()
 }
