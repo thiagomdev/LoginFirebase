@@ -4,6 +4,7 @@ protocol AppCoordinating {
     func start()
     func login()
     func signUp()
+    func resetPassword()
 }
 
 final class AppCoordinator {
@@ -13,6 +14,8 @@ final class AppCoordinator {
     private let sessionManager: SessionManager
     private let loginCoordinator: LoginCoordinating
     private let signUpCoordinator: SignUpCoordinating
+    private let resetPasswordCoordinator: ResetPasswordCoordinating
+    
     private var window: UIWindow
     
     init(
@@ -20,13 +23,15 @@ final class AppCoordinator {
         navigation: UINavigationController,
         sessionManager: SessionManager = .shared,
         loginCoordinator: LoginCoordinating,
-        signUpCoordinator: SignUpCoordinating
+        signUpCoordinator: SignUpCoordinating,
+        resetPasswordCoordinator: ResetPasswordCoordinating
     ) {
         self.sessionManager = sessionManager
         self.window = window
         self.navigation = navigation
         self.loginCoordinator = loginCoordinator
         self.signUpCoordinator = signUpCoordinator
+        self.resetPasswordCoordinator = resetPasswordCoordinator
     }
 }
 
@@ -45,5 +50,9 @@ extension AppCoordinator: AppCoordinating {
     
     func signUp() {
         signUpCoordinator.start()
+    }
+    
+    func resetPassword() {
+        resetPasswordCoordinator.start()
     }
 }

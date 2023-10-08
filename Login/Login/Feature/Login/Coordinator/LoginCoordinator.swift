@@ -30,9 +30,18 @@ final class LoginCoordinator {
 extension LoginCoordinator: LoginCoordinating {
     func start() {
         let login = LoginViewController()
+        let navigation = UINavigationController(rootViewController: login)
         login.coordinator = self
-        window.rootViewController = login
-        window.makeKeyAndVisible()
+        
+        UIView.transition(
+            with: window,
+            duration: 0.1,
+            options: .transitionCrossDissolve,
+            animations: { [weak self] in
+                self?.window.rootViewController = navigation
+                self?.window.makeKeyAndVisible()
+                self?.window.layoutSubviews()
+        })
     }
     
     func signUp() {
