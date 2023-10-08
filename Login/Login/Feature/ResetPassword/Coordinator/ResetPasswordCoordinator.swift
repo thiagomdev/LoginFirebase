@@ -2,6 +2,7 @@ import UIKit
 
 protocol ResetPasswordCoordinating {
     func start()
+    func login()
 }
 
 final class ResetPasswordCoordinator {
@@ -35,5 +36,9 @@ extension ResetPasswordCoordinator: ResetPasswordCoordinating {
                 self?.window.makeKeyAndVisible()
                 self?.window.layoutSubviews()
         })
+    }
+    
+    func login() {
+        loginCoordinator?.start()
     }
 }

@@ -67,7 +67,6 @@ extension LoginViewController {
     @objc
     private func handleForgotPassword() {
         coordinator?.resetPassword()
-        print("DEBUG: Did tap ForgotPassword button..")
     }
     
     @objc
@@ -78,7 +77,6 @@ extension LoginViewController {
     @objc
     private func handleSignUp() {
         coordinator?.signUp()
-        print("DEBUG: Did tap SignUp button..")
     }
     
     @objc

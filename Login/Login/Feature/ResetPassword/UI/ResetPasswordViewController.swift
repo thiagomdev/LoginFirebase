@@ -16,7 +16,8 @@ final class ResetPasswordViewController: UIViewController {
     private lazy var resetPasswordButton = Utils.makeButton(
         title: "Send reset Link",
         selector: #selector(didResetPassword),
-        font: .boldSystemFont(ofSize: 18)
+        font: .boldSystemFont(ofSize: 18),
+        isEnable: true
     )
     
     override func viewDidLoad() {
@@ -28,6 +29,7 @@ final class ResetPasswordViewController: UIViewController {
 extension ResetPasswordViewController {
     @objc
     private func didResetPassword() {
+        coordinator?.login()
         print("DEBUG: Did tap reset password button..")
     }
 }

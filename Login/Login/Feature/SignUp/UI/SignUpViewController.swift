@@ -3,8 +3,8 @@ import UIKit
 final class SignUpViewController: UIViewController {
     
     var coordinator: SignUpCoordinator?
-    private var viewModel: SignUpViewModeling
     
+    private var viewModel: SignUpViewModeling
     private lazy var iconImage = Utils.makeImage()
     private lazy var stackView = Utils.makeVerticalStackView()
     

@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
     private func run() -> Bool {
-        let window = UIWindow(frame: UIScreen.main.bounds)
+        let window = UIWindow(frame: UIScreen.main.coordinateSpace.bounds)
         self.window = window
         
         let loginCoordinatorVirtualProxy = LoginCoordinatorVirtualProxy()
@@ -44,7 +44,8 @@ extension AppDelegate {
             window: window,
             navigation: navigation,
             loginCoordinator: login,
-            signUpCoordinator: signUp
+            signUpCoordinator: signUp,
+            resetPasswordCoordinator: reset
         )
         
         appCoordinator?.start()
