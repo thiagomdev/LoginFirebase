@@ -48,6 +48,14 @@ extension ResetPasswordViewController: Authentication {
     }
 }
 
+extension ResetPasswordViewController: ValidationForm {
+    func updateForm() {
+        resetPasswordButton.isEnabled = viewModel.shouldEnableButton
+        resetPasswordButton.backgroundColor = buttonBackgroundColor
+        resetPasswordButton.setTitleColor(buttonTitleColor, for: .normal)
+    }
+}
+
 extension ResetPasswordViewController {
     @objc
     private func didResetPassword() {
@@ -60,7 +68,7 @@ extension ResetPasswordViewController {
         if sender == resetPasswordTextField {
             viewModel.model.email = sender.text
         }
-        updateValidationFields()
+        updateForm()
     }
 }
 
@@ -72,13 +80,7 @@ extension ResetPasswordViewController {
         view.layer.addSublayer(gradient)
         gradient.frame = view.frame
     }
-    
-    private func updateValidationFields() {
-        resetPasswordButton.isEnabled = viewModel.shouldEnableButton
-        resetPasswordButton.backgroundColor = buttonBackgroundColor
-        resetPasswordButton.setTitleColor(buttonTitleColor, for: .normal)
-    }
-    
+
     private func setTextFieldObservers() {
         resetPasswordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }

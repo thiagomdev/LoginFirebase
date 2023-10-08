@@ -47,6 +47,14 @@ final class SignUpViewController: UIViewController {
     }
 }
 
+extension SignUpViewController: ValidationForm {
+    func updateForm() {
+        signUpButton.isEnabled = viewModel.shouldEnableButton
+        signUpButton.backgroundColor = buttonBackgroundColor
+        signUpButton.setTitleColor(buttonTitleColor, for: .normal)
+    }
+}
+
 extension SignUpViewController {
     @objc
     private func didSignUp() {
@@ -73,7 +81,7 @@ extension SignUpViewController {
             print("DEBUG: Confirm Password \(String(describing: sender.text))")
         }
         print("DEBUG: Validation \(viewModel.validation)")
-        updateValidationFields()
+        updateForm()
     }
 }
 
@@ -90,12 +98,6 @@ extension SignUpViewController {
         emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         confirmPasswordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
-    }
-    
-    private func updateValidationFields() {
-        signUpButton.isEnabled = viewModel.shouldEnableButton
-        signUpButton.backgroundColor = buttonBackgroundColor
-        signUpButton.setTitleColor(buttonTitleColor, for: .normal)
     }
 }
 

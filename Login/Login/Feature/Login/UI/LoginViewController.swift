@@ -58,6 +58,14 @@ final class LoginViewController: UIViewController {
     }
 }
 
+extension LoginViewController: ValidationForm {
+    func updateForm() {
+        loginButton.isEnabled = viewModel.shouldEnableButton
+        loginButton.backgroundColor = buttonBackgroundColor
+        loginButton.setTitleColor(buttonTitleColor, for: .normal)
+    }
+}
+
 extension LoginViewController {
     @objc
     private func didLogin() {
@@ -89,7 +97,7 @@ extension LoginViewController {
             viewModel.model.password = sender.text
         }
         print("DEBUG: Validation \(viewModel.validation)")
-        updateValidationFields()
+        updateForm()
     }
 }
 
@@ -117,12 +125,6 @@ extension LoginViewController {
     private func setTextFieldObservers() {
         emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
-    }
-    
-    private func updateValidationFields() {
-        loginButton.isEnabled = viewModel.shouldEnableButton
-        loginButton.backgroundColor = buttonBackgroundColor
-        loginButton.setTitleColor(buttonTitleColor, for: .normal)
     }
 }
 
