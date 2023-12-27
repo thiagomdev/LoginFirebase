@@ -10,16 +10,19 @@ final class SignUpCoordinator {
     let window: UIWindow
     var navigationController: UINavigationController
     var rootViewController: UIViewController?
-    weak var loginCoordinator: LoginCoordinating?
+    private var loginCoordinator: LoginCoordinating?
+    private var resetCoordinator: ResetPasswordCoordinating?
     
     init(
         window: UIWindow,
         navigationController: UINavigationController,
         loginCoordinator: LoginCoordinating
+//        resetCoordinator: ResetPasswordCoordinating
     ) {
         self.window = window
         self.navigationController = navigationController
         self.loginCoordinator = loginCoordinator
+//        self.resetCoordinator = resetCoordinator
     }
 }
 
@@ -33,9 +36,10 @@ extension SignUpCoordinator: SignUpCoordinating {
             duration: 0.7,
             options: .transitionCrossDissolve,
             animations: { [weak self] in
-                self?.window.rootViewController = signUp
-                self?.window.makeKeyAndVisible()
-                self?.window.layoutSubviews()
+                guard let self else { return }
+                window.rootViewController = signUp
+                window.makeKeyAndVisible()
+                window.layoutSubviews()
         })
     }
     
@@ -44,6 +48,6 @@ extension SignUpCoordinator: SignUpCoordinating {
     }
     
     func resetPassword() {
-        loginCoordinator?.start()
+        resetCoordinator?.login()
     }
 }

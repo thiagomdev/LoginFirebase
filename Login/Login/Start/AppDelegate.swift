@@ -21,13 +21,13 @@ extension AppDelegate {
         let loginCoordinatorVirtualProxy = LoginCoordinatorVirtualProxy()
         let navigation = UINavigationController()
 
-        let signUp = SignUpCoordinator(
+        let reset = ResetPasswordCoordinator(
             window: window,
             navigationController: navigation,
             loginCoordinator: loginCoordinatorVirtualProxy
         )
         
-        let reset = ResetPasswordCoordinator(
+        let signUp = SignUpCoordinator(
             window: window,
             navigationController: navigation,
             loginCoordinator: loginCoordinatorVirtualProxy
@@ -36,7 +36,6 @@ extension AppDelegate {
         let login = LoginCoordinator(
             window: window,
             navigationController: navigation,
-            signUpCoordinator: signUp, 
             resetPasswordCoordinator: reset
         )
 

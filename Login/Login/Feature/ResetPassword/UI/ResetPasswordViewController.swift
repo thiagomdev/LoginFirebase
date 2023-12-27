@@ -34,6 +34,26 @@ final class ResetPasswordViewController: UIViewController {
         super.viewDidLoad()
         setup()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+}
+
+extension ResetPasswordViewController {
+    @objc
+    private func didResetPassword() {
+        coordinator?.login()
+    }
+    
+    @objc
+    private func textDidChange(_ sender: UITextField) {
+        if sender == resetPasswordTextField {
+            viewModel.model.email = sender.text
+        }
+        updateForm()
+    }
 }
 
 extension ResetPasswordViewController: Authentication {
@@ -48,19 +68,15 @@ extension ResetPasswordViewController: Authentication {
     }
 }
 
-extension ResetPasswordViewController {
-    @objc
-    private func didResetPassword() {
-        coordinator?.login()
-        print("DEBUG: Did tap reset password button..")
+extension ResetPasswordViewController: ValidationForm {
+    func updateForm() {
+        resetPasswordButton.isEnabled = viewModel.shouldEnableButton
+        resetPasswordButton.backgroundColor = buttonBackgroundColor
+        resetPasswordButton.setTitleColor(buttonTitleColor, for: .normal)
     }
     
-    @objc
-    private func textDidChange(_ sender: UITextField) {
-        if sender == resetPasswordTextField {
-            viewModel.model.email = sender.text
-        }
-        updateValidationFields()
+    func setObserves() {
+        resetPasswordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
 }
 
@@ -71,16 +87,6 @@ extension ResetPasswordViewController {
         gradient.locations = [0, 1]
         view.layer.addSublayer(gradient)
         gradient.frame = view.frame
-    }
-    
-    private func updateValidationFields() {
-        resetPasswordButton.isEnabled = viewModel.shouldEnableButton
-        resetPasswordButton.backgroundColor = buttonBackgroundColor
-        resetPasswordButton.setTitleColor(buttonTitleColor, for: .normal)
-    }
-    
-    private func setTextFieldObservers() {
-        resetPasswordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
 }
 
@@ -115,7 +121,7 @@ extension ResetPasswordViewController: ViewConfig {
     }
     
     func configUI() {
-        setTextFieldObservers()
+        setObserves()
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.barStyle = .black
     }
