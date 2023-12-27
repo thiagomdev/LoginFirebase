@@ -34,13 +34,17 @@ final class ResetPasswordViewController: UIViewController {
         super.viewDidLoad()
         setup()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
 }
 
 extension ResetPasswordViewController {
     @objc
     private func didResetPassword() {
         coordinator?.login()
-        print("DEBUG: Did tap reset password button..")
     }
     
     @objc

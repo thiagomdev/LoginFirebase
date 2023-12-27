@@ -9,7 +9,7 @@ protocol LoginCoordinating: AnyObject {
 final class LoginCoordinator {
     
     private let window: UIWindow
-    private let signUpCoordinator: SignUpCoordinating
+    private var signUpCoordinator: SignUpCoordinating?
     private let resetPasswordCoordinator: ResetPasswordCoordinating
     private var navigationController: UINavigationController
     private var rootViewController: UIViewController?
@@ -17,12 +17,12 @@ final class LoginCoordinator {
     init(
         window: UIWindow,
         navigationController: UINavigationController,
-        signUpCoordinator: SignUpCoordinating,
+//        signUpCoordinator: SignUpCoordinating,
         resetPasswordCoordinator: ResetPasswordCoordinating
     ) {
         self.window = window
         self.navigationController = navigationController
-        self.signUpCoordinator = signUpCoordinator
+//        self.signUpCoordinator = signUpCoordinator
         self.resetPasswordCoordinator = resetPasswordCoordinator
     }
 }
@@ -35,17 +35,23 @@ extension LoginCoordinator: LoginCoordinating {
         
         UIView.transition(
             with: window,
-            duration: 0.1,
+            duration: 0.8,
             options: .transitionCrossDissolve,
             animations: { [weak self] in
-                self?.window.rootViewController = navigation
-                self?.window.makeKeyAndVisible()
-                self?.window.layoutSubviews()
+                guard let self else { return }
+                window.rootViewController = navigation
+                window.makeKeyAndVisible()
+                window.layoutSubviews()
         })
     }
     
     func signUp() {
-        signUpCoordinator.start()
+        signUpCoordinator = SignUpCoordinator(
+            window: window,
+            navigationController: navigationController,
+            loginCoordinator: self
+        )
+        signUpCoordinator?.start()
     }
     
     func resetPassword() {

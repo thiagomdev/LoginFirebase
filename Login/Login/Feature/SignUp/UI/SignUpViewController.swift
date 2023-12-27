@@ -45,19 +45,22 @@ final class SignUpViewController: UIViewController {
         super.viewDidLoad()
         setup()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
 }
 
 extension SignUpViewController {
     @objc
     private func didSignUp() {
-        print("DEBUG: Did tap login button..")
         coordinator?.login()
     }
     
     @objc
     private func handleSignUp() {
         coordinator?.login()
-        print("DEBUG: Did tap SignUp button..")
     }
     
     @objc

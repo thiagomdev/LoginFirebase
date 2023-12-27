@@ -37,10 +37,10 @@ final class AppCoordinator {
 
 extension AppCoordinator: AppCoordinating {
     func start() {
-        if sessionManager.hasSession {
-            signUp()
-        } else {
+        if !sessionManager.hasSession {
             login()
+        } else {
+            signUp()
         }
     }
     
