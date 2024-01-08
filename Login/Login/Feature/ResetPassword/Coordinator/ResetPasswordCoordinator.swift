@@ -9,19 +9,16 @@ final class ResetPasswordCoordinator {
     let window: UIWindow
     var navigationController: UINavigationController
     var rootViewController: UIViewController?
-    private var loginCoordinator: LoginCoordinating?
-    private var signUpCoordinator: SignUpCoordinating?
+    private var loginCoordinator: LoginCoordinating
     
     init(
         window: UIWindow,
         navigationController: UINavigationController,
         loginCoordinator: LoginCoordinating
-//        signUpCoordinator: SignUpCoordinating
     ) {
         self.window = window
         self.navigationController = navigationController
         self.loginCoordinator = loginCoordinator
-//        self.signUpCoordinator = signUpCoordinator
     }
 }
 
@@ -48,6 +45,6 @@ extension ResetPasswordCoordinator: ResetPasswordCoordinating {
             navigationController: navigationController,
             resetPasswordCoordinator: self
         )
-        loginCoordinator?.start()
+        loginCoordinator.start()
     }
 }

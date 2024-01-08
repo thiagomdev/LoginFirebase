@@ -17,12 +17,10 @@ final class LoginCoordinator {
     init(
         window: UIWindow,
         navigationController: UINavigationController,
-//        signUpCoordinator: SignUpCoordinating,
         resetPasswordCoordinator: ResetPasswordCoordinating
     ) {
         self.window = window
         self.navigationController = navigationController
-//        self.signUpCoordinator = signUpCoordinator
         self.resetPasswordCoordinator = resetPasswordCoordinator
     }
 }

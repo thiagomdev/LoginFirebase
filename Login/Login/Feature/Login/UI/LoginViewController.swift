@@ -66,7 +66,12 @@ final class LoginViewController: UIViewController {
 extension LoginViewController {
     @objc
     private func didLogin() {
-        print("DEBUG: Did tap login button..")
+        if let email = emailTextField.text,
+           let password = passwordTextField.text {
+            viewModel.signInUser(from: email, password: password)
+            print("DEBUG: Did tap login button.. \(email)\n\(password)")
+        }
+        
     }
     
     @objc
