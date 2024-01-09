@@ -5,7 +5,6 @@ protocol SignUpViewModeling {
     var model: UserLogin { get set }
     var validation: Bool { get }
     var shouldEnableButton: Bool { get }
-    
     func createUser(from email: String, password: String)
 }
 
