@@ -33,12 +33,13 @@ extension SignUpViewModel: SignUpViewModeling {
     }
     
     func createUser(from email: String, password: String) {
-        auth.createUser(withEmail: email, password: password) { resul, error in
+        auth.createUser(withEmail: email, password: password) { [weak self] result, error in
+            guard let self else { return }
             if error != nil {
                 print("Algo deu errado!")
             } else {
-                self.user.email = email
-                self.user.password = password
+                user.email = email
+                user.password = password
             }
         }
     }

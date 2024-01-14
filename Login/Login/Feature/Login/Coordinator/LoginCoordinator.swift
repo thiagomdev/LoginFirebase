@@ -10,7 +10,7 @@ final class LoginCoordinator {
     
     private let window: UIWindow
     private var signUpCoordinator: SignUpCoordinating?
-    private let resetPasswordCoordinator: ResetPasswordCoordinating
+    private weak var resetPasswordCoordinator: ResetPasswordCoordinating?
     private var navigationController: UINavigationController
     private var rootViewController: UIViewController?
     
@@ -27,7 +27,8 @@ final class LoginCoordinator {
 
 extension LoginCoordinator: LoginCoordinating {
     func start() {
-        let login = LoginViewController()
+        let viewModel = LoginViewModel()
+        let login = LoginViewController(viewModel: viewModel)
         let navigation = UINavigationController(rootViewController: login)
         login.coordinator = self
         
@@ -53,6 +54,6 @@ extension LoginCoordinator: LoginCoordinating {
     }
     
     func resetPassword() {
-        resetPasswordCoordinator.start()
+        resetPasswordCoordinator?.start()
     }
 }

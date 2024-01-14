@@ -2,7 +2,7 @@ import UIKit
 
 final class SignUpViewController: UIViewController {
     
-    var coordinator: SignUpCoordinator?
+    weak var coordinator: SignUpCoordinator?
     
     private var viewModel: SignUpViewModeling
     private lazy var iconImage = Utils.makeImage()
@@ -27,7 +27,7 @@ final class SignUpViewController: UIViewController {
         selector: #selector(handleSignUp)
     )
     
-    init(viewModel: SignUpViewModeling = SignUpViewModel()) {
+    init(viewModel: SignUpViewModeling) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }

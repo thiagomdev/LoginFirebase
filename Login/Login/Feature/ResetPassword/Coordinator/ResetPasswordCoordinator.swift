@@ -24,7 +24,8 @@ final class ResetPasswordCoordinator {
 
 extension ResetPasswordCoordinator: ResetPasswordCoordinating {
     func start() {
-        let reset = ResetPasswordViewController()
+        let viewModel = ResetPasswordViewModel()
+        let reset = ResetPasswordViewController(viewModel: viewModel)
         reset.coordinator = self
 
         UIView.transition(
@@ -40,11 +41,12 @@ extension ResetPasswordCoordinator: ResetPasswordCoordinating {
     }
     
     func login() {
-        loginCoordinator = LoginCoordinator(
+        let loginCoordinator = LoginCoordinator(
             window: window,
             navigationController: navigationController,
             resetPasswordCoordinator: self
         )
+        self.loginCoordinator = loginCoordinator
         loginCoordinator.start()
     }
 }

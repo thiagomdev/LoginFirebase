@@ -9,7 +9,7 @@ final class SignUpCoordinator {
     let window: UIWindow
     var navigationController: UINavigationController
     var rootViewController: UIViewController?
-    private var loginCoordinator: LoginCoordinating?
+    private weak var loginCoordinator: LoginCoordinating?
     
     init(
         window: UIWindow,
@@ -24,7 +24,8 @@ final class SignUpCoordinator {
 
 extension SignUpCoordinator: SignUpCoordinating {
     func start() {
-        let signUp = SignUpViewController()
+        let viewModel = SignUpViewModel()
+        let signUp = SignUpViewController(viewModel: viewModel)
         signUp.coordinator = self
 
         UIView.transition(

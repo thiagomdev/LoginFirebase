@@ -24,7 +24,7 @@ extension LoginViewModel: LoginViewModeling {
     }
     
     var validation: Bool {
-        return user.email?.isEmpty == false 
+        user.email?.isEmpty == false
         && user.password?.isEmpty == false
     }
     
@@ -33,12 +33,13 @@ extension LoginViewModel: LoginViewModeling {
     }
 
     func signInUser(from email: String, password: String) {
-        auth.signIn(withEmail: email, password: password) { result, error in
+        auth.signIn(withEmail: email, password: password) { [weak self] result, error in
+            guard let self else { return }
             if error != nil {
                 print("Algo deu errado!")
             } else {
-                self.user.email = email
-                self.user.password = password
+                user.email = email
+                user.password = password
             }
         }
     }

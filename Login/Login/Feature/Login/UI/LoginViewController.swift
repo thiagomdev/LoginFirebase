@@ -2,7 +2,7 @@ import UIKit
 
 final class LoginViewController: UIViewController {
     
-    var coordinator: LoginCoordinator?
+    weak var coordinator: LoginCoordinator?
 
     private var viewModel: LoginViewModeling
     private lazy var iconImage = Utils.makeImage()
@@ -43,7 +43,7 @@ final class LoginViewController: UIViewController {
         selector: #selector(handleSignUp)
     )
     
-    init(viewModel: LoginViewModeling =  LoginViewModel()) {
+    init(viewModel: LoginViewModeling) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }

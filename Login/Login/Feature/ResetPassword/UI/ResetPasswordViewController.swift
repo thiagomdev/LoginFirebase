@@ -2,7 +2,7 @@ import UIKit
 
 final class ResetPasswordViewController: UIViewController {
 
-    var coordinator: ResetPasswordCoordinator?
+    weak var coordinator: ResetPasswordCoordinator?
     
     private var viewModel: ResetPasswordViewModeling
     private lazy var iconImage = Utils.makeImage()
@@ -21,7 +21,7 @@ final class ResetPasswordViewController: UIViewController {
         isEnable: true
     )
     
-    init(viewModel: ResetPasswordViewModeling = ResetPasswordViewModel()) {
+    init(viewModel: ResetPasswordViewModeling) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
