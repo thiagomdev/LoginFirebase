@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AADC9B062AD33E910073D96F /* UserLoginFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC9B052AD33E910073D96F /* UserLoginFixture.swift */; };
+		AAAE40132B5548D8002A2E02 /* LeakedViewControllerDetector in Frameworks */ = {isa = PBXBuildFile; productRef = AAAE40122B5548D8002A2E02 /* LeakedViewControllerDetector */; };
+		AAD61D922B4CB06C00215294 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AAD61D912B4CB06C00215294 /* FirebaseAuth */; };
+		AAD61D942B4CB06C00215294 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = AAD61D932B4CB06C00215294 /* FirebaseStorage */; };
 		AADF71B72ACD86DD00A49530 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADF71B62ACD86DD00A49530 /* AppDelegate.swift */; };
 		AADF71BB2ACD86DD00A49530 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADF71BA2ACD86DD00A49530 /* LoginViewController.swift */; };
 		AADF71C02ACD86DF00A49530 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AADF71BF2ACD86DF00A49530 /* Assets.xcassets */; };
@@ -15,6 +17,7 @@
 		AADF71D52ACD8A2800A49530 /* ViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADF71D32ACD8A2800A49530 /* ViewConfig.swift */; };
 		AADF71D62ACD8A2800A49530 /* NSLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADF71D42ACD8A2800A49530 /* NSLayout+Extension.swift */; };
 		AADF71D82ACD900100A49530 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADF71D72ACD900100A49530 /* Utils.swift */; };
+		AAEB6ABF2B4CD86A00A02643 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAEB6ABE2B4CD86A00A02643 /* GoogleService-Info.plist */; };
 		AAFAA8622AD1DD59008DEBB6 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA8612AD1DD59008DEBB6 /* UIStackView+Extension.swift */; };
 		AAFAA8682AD1E12D008DEBB6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA8672AD1E12D008DEBB6 /* SignUpViewController.swift */; };
 		AAFAA86A2AD1E360008DEBB6 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA8692AD1E360008DEBB6 /* LoginViewModel.swift */; };
@@ -30,22 +33,19 @@
 		AAFAA8852AD20337008DEBB6 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA8842AD20337008DEBB6 /* ResetPasswordViewModel.swift */; };
 		AAFAA88A2AD20657008DEBB6 /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA8892AD20657008DEBB6 /* UserLogin.swift */; };
 		AAFAA88D2AD21E88008DEBB6 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA88C2AD21E88008DEBB6 /* Authentication.swift */; };
-		AAFAA89D2AD32E84008DEBB6 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA89C2AD32E84008DEBB6 /* LoginViewModelTests.swift */; };
+		B1452C692B61BEFC00091BE4 /* LoginFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1452C682B61BEFC00091BE4 /* LoginFactory.swift */; };
+		B1452C6B2B61C2B700091BE4 /* SignUpFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1452C6A2B61C2B700091BE4 /* SignUpFactory.swift */; };
+		B1452C6D2B61C3A900091BE4 /* NoSessionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1452C6C2B61C3A900091BE4 /* NoSessionCoordinator.swift */; };
+		B1452C6F2B61C59700091BE4 /* ResetPasswordFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1452C6E2B61C59700091BE4 /* ResetPasswordFactory.swift */; };
+		B1452C712B61C64C00091BE4 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1452C702B61C64C00091BE4 /* RootCoordinator.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		AAFAA8962AD32D54008DEBB6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AADF71AB2ACD86DD00A49530 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AADF71B22ACD86DD00A49530;
-			remoteInfo = Login;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		AADC9B032AD33E3B0073D96F /* Login.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Login.xctestplan; sourceTree = SOURCE_ROOT; };
-		AADC9B052AD33E910073D96F /* UserLoginFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginFixture.swift; sourceTree = "<group>"; };
+		AAC59BB32B588EFC00AFF32D /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
+		AAD61D8C2B4CB00800215294 /* libfire7.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libfire7.tbd; path = usr/lib/libfire7.tbd; sourceTree = SDKROOT; };
+		AAD61D8D2B4CB00900215294 /* libfire6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libfire6.tbd; path = usr/lib/libfire6.tbd; sourceTree = SDKROOT; };
+		AAD61D8E2B4CB00900215294 /* libfire2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libfire2.tbd; path = usr/lib/libfire2.tbd; sourceTree = SDKROOT; };
+		AAD61D8F2B4CB00900215294 /* libfire3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libfire3.tbd; path = usr/lib/libfire3.tbd; sourceTree = SDKROOT; };
 		AADF71B32ACD86DD00A49530 /* Login.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Login.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AADF71B62ACD86DD00A49530 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AADF71BA2ACD86DD00A49530 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +55,7 @@
 		AADF71D32ACD8A2800A49530 /* ViewConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewConfig.swift; sourceTree = "<group>"; };
 		AADF71D42ACD8A2800A49530 /* NSLayout+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayout+Extension.swift"; sourceTree = "<group>"; };
 		AADF71D72ACD900100A49530 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		AAEB6ABE2B4CD86A00A02643 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AAFAA8612AD1DD59008DEBB6 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		AAFAA8672AD1E12D008DEBB6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		AAFAA8692AD1E360008DEBB6 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -70,8 +71,11 @@
 		AAFAA8842AD20337008DEBB6 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		AAFAA8892AD20657008DEBB6 /* UserLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
 		AAFAA88C2AD21E88008DEBB6 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
-		AAFAA8922AD32D54008DEBB6 /* LoginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AAFAA89C2AD32E84008DEBB6 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		B1452C682B61BEFC00091BE4 /* LoginFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginFactory.swift; path = ../LoginFactory.swift; sourceTree = "<group>"; };
+		B1452C6A2B61C2B700091BE4 /* SignUpFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpFactory.swift; path = ../SignUpFactory.swift; sourceTree = "<group>"; };
+		B1452C6C2B61C3A900091BE4 /* NoSessionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSessionCoordinator.swift; sourceTree = "<group>"; };
+		B1452C6E2B61C59700091BE4 /* ResetPasswordFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResetPasswordFactory.swift; path = ../ResetPasswordFactory.swift; sourceTree = "<group>"; };
+		B1452C702B61C64C00091BE4 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,33 +83,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AAFAA88F2AD32D54008DEBB6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				AAAE40132B5548D8002A2E02 /* LeakedViewControllerDetector in Frameworks */,
+				AAD61D922B4CB06C00215294 /* FirebaseAuth in Frameworks */,
+				AAD61D942B4CB06C00215294 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AADC9B042AD33E820073D96F /* Fixture */ = {
+		AAC59BB22B588EFC00AFF32D /* LoginTests */ = {
 			isa = PBXGroup;
 			children = (
-				AADC9B052AD33E910073D96F /* UserLoginFixture.swift */,
+				AAC59BB32B588EFC00AFF32D /* LoginTests.swift */,
 			);
-			path = Fixture;
+			path = LoginTests;
+			sourceTree = "<group>";
+		};
+		AAD61D8B2B4CB00800215294 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AAD61D8E2B4CB00900215294 /* libfire2.tbd */,
+				AAD61D8F2B4CB00900215294 /* libfire3.tbd */,
+				AAD61D8D2B4CB00900215294 /* libfire6.tbd */,
+				AAD61D8C2B4CB00800215294 /* libfire7.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		AADF71AA2ACD86DD00A49530 = {
 			isa = PBXGroup;
 			children = (
 				AADF71B52ACD86DD00A49530 /* Login */,
-				AAFAA8932AD32D54008DEBB6 /* ApplicationTests */,
+				AAC59BB22B588EFC00AFF32D /* LoginTests */,
 				AADF71B42ACD86DD00A49530 /* Products */,
+				AAD61D8B2B4CB00800215294 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,7 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				AADF71B32ACD86DD00A49530 /* Login.app */,
-				AAFAA8922AD32D54008DEBB6 /* LoginTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,9 +144,10 @@
 		AADF71CA2ACD879900A49530 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				AADF71C42ACD86DF00A49530 /* Info.plist */,
 				AADF71BF2ACD86DF00A49530 /* Assets.xcassets */,
 				AADF71C12ACD86DF00A49530 /* LaunchScreen.storyboard */,
-				AADF71C42ACD86DF00A49530 /* Info.plist */,
+				AAEB6ABE2B4CD86A00A02643 /* GoogleService-Info.plist */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -143,6 +155,7 @@
 		AADF71CB2ACD879B00A49530 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				B1452C6C2B61C3A900091BE4 /* NoSessionCoordinator.swift */,
 				AADF71CD2ACD87C100A49530 /* Login */,
 				AAFAA8632AD1E0E4008DEBB6 /* SignUp */,
 				AAFAA87C2AD1FD1C008DEBB6 /* ResetPassword */,
@@ -155,6 +168,7 @@
 			children = (
 				AADF71B62ACD86DD00A49530 /* AppDelegate.swift */,
 				AAFAA86F2AD1E54A008DEBB6 /* AppCoordinator.swift */,
+				B1452C702B61C64C00091BE4 /* RootCoordinator.swift */,
 			);
 			path = Start;
 			sourceTree = "<group>";
@@ -242,6 +256,7 @@
 		AAFAA8712AD1E5BC008DEBB6 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				B1452C682B61BEFC00091BE4 /* LoginFactory.swift */,
 				AAFAA8732AD1E5D8008DEBB6 /* LoginCoordinator.swift */,
 			);
 			path = Coordinator;
@@ -250,6 +265,7 @@
 		AAFAA8722AD1E5C4008DEBB6 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				B1452C6A2B61C2B700091BE4 /* SignUpFactory.swift */,
 				AAFAA8752AD1E60D008DEBB6 /* SignUpCoordinator.swift */,
 			);
 			path = Coordinator;
@@ -294,6 +310,7 @@
 		AAFAA8812AD20022008DEBB6 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				B1452C6E2B61C59700091BE4 /* ResetPasswordFactory.swift */,
 				AAFAA8822AD200E4008DEBB6 /* ResetPasswordCoordinator.swift */,
 			);
 			path = Coordinator;
@@ -332,24 +349,6 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
-		AAFAA8932AD32D54008DEBB6 /* ApplicationTests */ = {
-			isa = PBXGroup;
-			children = (
-				AADC9B042AD33E820073D96F /* Fixture */,
-				AAFAA89B2AD32D7B008DEBB6 /* LoginTests */,
-			);
-			path = ApplicationTests;
-			sourceTree = "<group>";
-		};
-		AAFAA89B2AD32D7B008DEBB6 /* LoginTests */ = {
-			isa = PBXGroup;
-			children = (
-				AADC9B032AD33E3B0073D96F /* Login.xctestplan */,
-				AAFAA89C2AD32E84008DEBB6 /* LoginViewModelTests.swift */,
-			);
-			path = LoginTests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -366,27 +365,14 @@
 			dependencies = (
 			);
 			name = Login;
+			packageProductDependencies = (
+				AAD61D912B4CB06C00215294 /* FirebaseAuth */,
+				AAD61D932B4CB06C00215294 /* FirebaseStorage */,
+				AAAE40122B5548D8002A2E02 /* LeakedViewControllerDetector */,
+			);
 			productName = Login;
 			productReference = AADF71B32ACD86DD00A49530 /* Login.app */;
 			productType = "com.apple.product-type.application";
-		};
-		AAFAA8912AD32D54008DEBB6 /* LoginTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AAFAA8982AD32D54008DEBB6 /* Build configuration list for PBXNativeTarget "LoginTests" */;
-			buildPhases = (
-				AAFAA88E2AD32D54008DEBB6 /* Sources */,
-				AAFAA88F2AD32D54008DEBB6 /* Frameworks */,
-				AAFAA8902AD32D54008DEBB6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AAFAA8972AD32D54008DEBB6 /* PBXTargetDependency */,
-			);
-			name = LoginTests;
-			productName = LoginTests;
-			productReference = AAFAA8922AD32D54008DEBB6 /* LoginTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -395,16 +381,11 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					AADF71B22ACD86DD00A49530 = {
 						CreatedOnToolsVersion = 15.0;
-					};
-					AAFAA8912AD32D54008DEBB6 = {
-						CreatedOnToolsVersion = 15.0;
-						LastSwiftMigration = 1500;
-						TestTargetID = AADF71B22ACD86DD00A49530;
 					};
 				};
 			};
@@ -417,12 +398,15 @@
 				Base,
 			);
 			mainGroup = AADF71AA2ACD86DD00A49530;
+			packageReferences = (
+				AAD61D902B4CB06C00215294 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				AAAE40112B5548D8002A2E02 /* XCRemoteSwiftPackageReference "LeakedViewControllerDetector" */,
+			);
 			productRefGroup = AADF71B42ACD86DD00A49530 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				AADF71B22ACD86DD00A49530 /* Login */,
-				AAFAA8912AD32D54008DEBB6 /* LoginTests */,
 			);
 		};
 /* End PBXProject section */
@@ -434,13 +418,7 @@
 			files = (
 				AADF71C32ACD86DF00A49530 /* LaunchScreen.storyboard in Resources */,
 				AADF71C02ACD86DF00A49530 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AAFAA8902AD32D54008DEBB6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				AAEB6ABF2B4CD86A00A02643 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,14 +430,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAFAA8702AD1E54A008DEBB6 /* AppCoordinator.swift in Sources */,
-				AADC9B062AD33E910073D96F /* UserLoginFixture.swift in Sources */,
 				AADF71D52ACD8A2800A49530 /* ViewConfig.swift in Sources */,
+				B1452C712B61C64C00091BE4 /* RootCoordinator.swift in Sources */,
 				AAFAA8622AD1DD59008DEBB6 /* UIStackView+Extension.swift in Sources */,
 				AAFAA88D2AD21E88008DEBB6 /* Authentication.swift in Sources */,
 				AAFAA8802AD1FE27008DEBB6 /* ResetPasswordViewController.swift in Sources */,
 				AAFAA86C2AD1E399008DEBB6 /* SignUpViewModel.swift in Sources */,
 				AAFAA8742AD1E5D8008DEBB6 /* LoginCoordinator.swift in Sources */,
 				AAFAA8832AD200E4008DEBB6 /* ResetPasswordCoordinator.swift in Sources */,
+				B1452C6B2B61C2B700091BE4 /* SignUpFactory.swift in Sources */,
+				B1452C692B61BEFC00091BE4 /* LoginFactory.swift in Sources */,
+				B1452C6D2B61C3A900091BE4 /* NoSessionCoordinator.swift in Sources */,
 				AAFAA8682AD1E12D008DEBB6 /* SignUpViewController.swift in Sources */,
 				AADF71D62ACD8A2800A49530 /* NSLayout+Extension.swift in Sources */,
 				AADF71BB2ACD86DD00A49530 /* LoginViewController.swift in Sources */,
@@ -468,6 +449,7 @@
 				AAFAA8782AD1ECE3008DEBB6 /* SessionManager.swift in Sources */,
 				AAFAA8762AD1E60D008DEBB6 /* SignUpCoordinator.swift in Sources */,
 				AAFAA86E2AD1E472008DEBB6 /* Coordinator.swift in Sources */,
+				B1452C6F2B61C59700091BE4 /* ResetPasswordFactory.swift in Sources */,
 				AADF71B72ACD86DD00A49530 /* AppDelegate.swift in Sources */,
 				AADF71D82ACD900100A49530 /* Utils.swift in Sources */,
 				AAFAA86A2AD1E360008DEBB6 /* LoginViewModel.swift in Sources */,
@@ -475,23 +457,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AAFAA88E2AD32D54008DEBB6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AAFAA89D2AD32E84008DEBB6 /* LoginViewModelTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		AAFAA8972AD32D54008DEBB6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AADF71B22ACD86DD00A49530 /* Login */;
-			targetProxy = AAFAA8962AD32D54008DEBB6 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AADF71C12ACD86DF00A49530 /* LaunchScreen.storyboard */ = {
@@ -631,7 +597,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L923PSABUA;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Login/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -659,7 +625,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L923PSABUA;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Login/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -678,47 +644,6 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		AAFAA8992AD32D54008DEBB6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L923PSABUA;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.thiagomonteiro.LoginTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Login.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Login";
-			};
-			name = Debug;
-		};
-		AAFAA89A2AD32D54008DEBB6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L923PSABUA;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.thiagomonteiro.LoginTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Login.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Login";
 			};
 			name = Release;
 		};
@@ -743,16 +668,44 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AAFAA8982AD32D54008DEBB6 /* Build configuration list for PBXNativeTarget "LoginTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AAFAA8992AD32D54008DEBB6 /* Debug */,
-				AAFAA89A2AD32D54008DEBB6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AAAE40112B5548D8002A2E02 /* XCRemoteSwiftPackageReference "LeakedViewControllerDetector" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Janneman84/LeakedViewControllerDetector";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		AAD61D902B4CB06C00215294 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AAAE40122B5548D8002A2E02 /* LeakedViewControllerDetector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AAAE40112B5548D8002A2E02 /* XCRemoteSwiftPackageReference "LeakedViewControllerDetector" */;
+			productName = LeakedViewControllerDetector;
+		};
+		AAD61D912B4CB06C00215294 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AAD61D902B4CB06C00215294 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		AAD61D932B4CB06C00215294 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AAD61D902B4CB06C00215294 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AADF71AB2ACD86DD00A49530 /* Project object */;
 }

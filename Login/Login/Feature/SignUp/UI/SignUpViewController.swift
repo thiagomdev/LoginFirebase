@@ -14,12 +14,7 @@ final class SignUpViewController: UIViewController {
         placeholder: "Password",
         isSecureTextEntry: true
     )
-    
-    private lazy var confirmPasswordTextField = Utils.makeTextField(
-        placeholder: "Confirm Password",
-        isSecureTextEntry: true
-    )
-    
+
     private lazy var signUpButton = Utils.makeButton(
         title: "Sign up",
         selector: #selector(didSignUp),
@@ -32,7 +27,7 @@ final class SignUpViewController: UIViewController {
         selector: #selector(handleSignUp)
     )
     
-    init(viewModel: SignUpViewModeling = SignUpViewModel()) {
+    init(viewModel: SignUpViewModeling) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -50,12 +45,27 @@ final class SignUpViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("SignUpViewController - viewDidAppear")
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("SignUpViewController - viewDidDisappear")
+        navigationController?.viewControllers.first?.removeFromParent()
+    }
 }
 
 extension SignUpViewController {
     @objc
     private func didSignUp() {
-        coordinator?.login()
+        if let email = emailTextField.text,
+           let password = passwordTextField.text {
+            viewModel.createUser(from: email, password: password)
+            coordinator?.login()
+        }
     }
     
     @objc
@@ -67,10 +77,8 @@ extension SignUpViewController {
     private func textDidChange(_ sender: UITextField) {
         if sender == emailTextField {
             viewModel.model.email = sender.text
-        } else if sender == passwordTextField {
-            viewModel.model.password = sender.text
         } else {
-            viewModel.model.confirmPassword = sender.text
+            viewModel.model.password = sender.text
         }
         updateForm()
     }
@@ -98,7 +106,6 @@ extension SignUpViewController: ValidationForm {
     func setObserves() {
         emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
-        confirmPasswordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
 }
 
@@ -120,7 +127,6 @@ extension SignUpViewController: ViewConfig {
         stackView.addSubviews(
             emailTextField,
             passwordTextField,
-            confirmPasswordTextField,
             signUpButton
         )
 
@@ -141,7 +147,7 @@ extension SignUpViewController: ViewConfig {
             
             emailTextField.heightAnchor.constraint(equalToConstant: 48),
             passwordTextField.heightAnchor.constraint(equalToConstant: 48),
-            confirmPasswordTextField.heightAnchor.constraint(equalToConstant: 48),
+
             signUpButton.heightAnchor.constraint(equalToConstant: 48),
             
             haveAndAccoutButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16),

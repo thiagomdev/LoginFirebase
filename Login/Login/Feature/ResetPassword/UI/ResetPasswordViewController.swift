@@ -21,7 +21,7 @@ final class ResetPasswordViewController: UIViewController {
         isEnable: true
     )
     
-    init(viewModel: ResetPasswordViewModeling = ResetPasswordViewModel()) {
+    init(viewModel: ResetPasswordViewModeling) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -38,6 +38,16 @@ final class ResetPasswordViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("ResetPasswordViewController - viewDidAppear")
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("ResetPasswordViewController - viewDidDisappear")
     }
 }
 

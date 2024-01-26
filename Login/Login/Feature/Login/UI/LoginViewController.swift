@@ -43,7 +43,7 @@ final class LoginViewController: UIViewController {
         selector: #selector(handleSignUp)
     )
     
-    init(viewModel: LoginViewModeling =  LoginViewModel()) {
+    init(viewModel: LoginViewModeling) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -66,7 +66,10 @@ final class LoginViewController: UIViewController {
 extension LoginViewController {
     @objc
     private func didLogin() {
-        print("DEBUG: Did tap login button..")
+        if let email = emailTextField.text,
+           let password = passwordTextField.text {
+            viewModel.signInUser(from: email, password: password)
+        }
     }
     
     @objc
