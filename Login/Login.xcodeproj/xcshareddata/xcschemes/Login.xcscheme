@@ -34,7 +34,18 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AAEB6AC32B4CE2F700A02643"
+               BlueprintIdentifier = "AAC59BB02B588EFC00AFF32D"
+               BuildableName = "LoginTests.xctest"
+               BlueprintName = "LoginTests"
+               ReferencedContainer = "container:Login.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AAC59BB02B588EFC00AFF32D"
                BuildableName = "LoginTests.xctest"
                BlueprintName = "LoginTests"
                ReferencedContainer = "container:Login.xcodeproj">
@@ -46,11 +57,13 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      disablePerformanceAntipatternChecker = "YES"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
+      enableGPUValidationMode = "1"
       showGraphicsOverview = "Yes"
       logGraphicsOverview = "Yes"
       allowLocationSimulation = "YES">
@@ -67,6 +80,11 @@
       <AdditionalOptions>
          <AdditionalOption
             key = "MallocStackLogging"
+            value = ""
+            isEnabled = "YES">
+         </AdditionalOption>
+         <AdditionalOption
+            key = "MallocScribble"
             value = ""
             isEnabled = "YES">
          </AdditionalOption>

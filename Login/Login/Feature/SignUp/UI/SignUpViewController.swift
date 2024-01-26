@@ -2,7 +2,7 @@ import UIKit
 
 final class SignUpViewController: UIViewController {
     
-    weak var coordinator: SignUpCoordinator?
+    var coordinator: SignUpCoordinator?
     
     private var viewModel: SignUpViewModeling
     private lazy var iconImage = Utils.makeImage()
@@ -44,6 +44,17 @@ final class SignUpViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("SignUpViewController - viewDidAppear")
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("SignUpViewController - viewDidDisappear")
+        navigationController?.viewControllers.first?.removeFromParent()
     }
 }
 

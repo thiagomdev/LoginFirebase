@@ -1,5 +1,6 @@
 import UIKit
 import Firebase
+import LeakedViewControllerDetector
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -10,6 +11,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        delectMemoryLeak()
         FirebaseApp.configure()
         return run()
     }
@@ -20,36 +22,21 @@ extension AppDelegate {
         let window = UIWindow(frame: UIScreen.main.coordinateSpace.bounds)
         self.window = window
         
-        let loginCoordinatorVirtualProxy = LoginCoordinatorVirtualProxy()
         let navigation = UINavigationController()
-
-        let reset = ResetPasswordCoordinator(
-            window: window,
-            navigationController: navigation,
-            loginCoordinator: loginCoordinatorVirtualProxy
-        )
-        
-        let signUp = SignUpCoordinator(
-            window: window,
-            navigationController: navigation,
-            loginCoordinator: loginCoordinatorVirtualProxy
-        )
-        
-        let login = LoginCoordinator(
-            window: window,
-            navigationController: navigation,
-            resetPasswordCoordinator: reset
-        )
 
         appCoordinator = AppCoordinator(
             window: window,
-            navigation: navigation,
-            loginCoordinator: login,
-            signUpCoordinator: signUp,
-            resetPasswordCoordinator: reset
+            navigation: navigation
         )
         
         appCoordinator?.start()
         return true
+    }
+    
+    private func delectMemoryLeak() {
+        LeakedViewControllerDetector.onDetect() {
+            leakedViewController, leakedView, message in
+            return true
+        }
     }
 }

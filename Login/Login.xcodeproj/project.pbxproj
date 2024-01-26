@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AAAE40132B5548D8002A2E02 /* LeakedViewControllerDetector in Frameworks */ = {isa = PBXBuildFile; productRef = AAAE40122B5548D8002A2E02 /* LeakedViewControllerDetector */; };
 		AAD61D922B4CB06C00215294 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AAD61D912B4CB06C00215294 /* FirebaseAuth */; };
 		AAD61D942B4CB06C00215294 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = AAD61D932B4CB06C00215294 /* FirebaseStorage */; };
 		AADF71B72ACD86DD00A49530 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADF71B62ACD86DD00A49530 /* AppDelegate.swift */; };
@@ -32,9 +33,15 @@
 		AAFAA8852AD20337008DEBB6 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA8842AD20337008DEBB6 /* ResetPasswordViewModel.swift */; };
 		AAFAA88A2AD20657008DEBB6 /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA8892AD20657008DEBB6 /* UserLogin.swift */; };
 		AAFAA88D2AD21E88008DEBB6 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFAA88C2AD21E88008DEBB6 /* Authentication.swift */; };
+		B1452C692B61BEFC00091BE4 /* LoginFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1452C682B61BEFC00091BE4 /* LoginFactory.swift */; };
+		B1452C6B2B61C2B700091BE4 /* SignUpFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1452C6A2B61C2B700091BE4 /* SignUpFactory.swift */; };
+		B1452C6D2B61C3A900091BE4 /* NoSessionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1452C6C2B61C3A900091BE4 /* NoSessionCoordinator.swift */; };
+		B1452C6F2B61C59700091BE4 /* ResetPasswordFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1452C6E2B61C59700091BE4 /* ResetPasswordFactory.swift */; };
+		B1452C712B61C64C00091BE4 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1452C702B61C64C00091BE4 /* RootCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AAC59BB32B588EFC00AFF32D /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 		AAD61D8C2B4CB00800215294 /* libfire7.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libfire7.tbd; path = usr/lib/libfire7.tbd; sourceTree = SDKROOT; };
 		AAD61D8D2B4CB00900215294 /* libfire6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libfire6.tbd; path = usr/lib/libfire6.tbd; sourceTree = SDKROOT; };
 		AAD61D8E2B4CB00900215294 /* libfire2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libfire2.tbd; path = usr/lib/libfire2.tbd; sourceTree = SDKROOT; };
@@ -64,6 +71,11 @@
 		AAFAA8842AD20337008DEBB6 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		AAFAA8892AD20657008DEBB6 /* UserLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
 		AAFAA88C2AD21E88008DEBB6 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		B1452C682B61BEFC00091BE4 /* LoginFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginFactory.swift; path = ../LoginFactory.swift; sourceTree = "<group>"; };
+		B1452C6A2B61C2B700091BE4 /* SignUpFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpFactory.swift; path = ../SignUpFactory.swift; sourceTree = "<group>"; };
+		B1452C6C2B61C3A900091BE4 /* NoSessionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSessionCoordinator.swift; sourceTree = "<group>"; };
+		B1452C6E2B61C59700091BE4 /* ResetPasswordFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResetPasswordFactory.swift; path = ../ResetPasswordFactory.swift; sourceTree = "<group>"; };
+		B1452C702B61C64C00091BE4 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAAE40132B5548D8002A2E02 /* LeakedViewControllerDetector in Frameworks */,
 				AAD61D922B4CB06C00215294 /* FirebaseAuth in Frameworks */,
 				AAD61D942B4CB06C00215294 /* FirebaseStorage in Frameworks */,
 			);
@@ -79,6 +92,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AAC59BB22B588EFC00AFF32D /* LoginTests */ = {
+			isa = PBXGroup;
+			children = (
+				AAC59BB32B588EFC00AFF32D /* LoginTests.swift */,
+			);
+			path = LoginTests;
+			sourceTree = "<group>";
+		};
 		AAD61D8B2B4CB00800215294 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				AADF71B52ACD86DD00A49530 /* Login */,
+				AAC59BB22B588EFC00AFF32D /* LoginTests */,
 				AADF71B42ACD86DD00A49530 /* Products */,
 				AAD61D8B2B4CB00800215294 /* Frameworks */,
 			);
@@ -122,10 +144,10 @@
 		AADF71CA2ACD879900A49530 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				AADF71C42ACD86DF00A49530 /* Info.plist */,
 				AADF71BF2ACD86DF00A49530 /* Assets.xcassets */,
 				AADF71C12ACD86DF00A49530 /* LaunchScreen.storyboard */,
 				AAEB6ABE2B4CD86A00A02643 /* GoogleService-Info.plist */,
-				AADF71C42ACD86DF00A49530 /* Info.plist */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -133,6 +155,7 @@
 		AADF71CB2ACD879B00A49530 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				B1452C6C2B61C3A900091BE4 /* NoSessionCoordinator.swift */,
 				AADF71CD2ACD87C100A49530 /* Login */,
 				AAFAA8632AD1E0E4008DEBB6 /* SignUp */,
 				AAFAA87C2AD1FD1C008DEBB6 /* ResetPassword */,
@@ -145,6 +168,7 @@
 			children = (
 				AADF71B62ACD86DD00A49530 /* AppDelegate.swift */,
 				AAFAA86F2AD1E54A008DEBB6 /* AppCoordinator.swift */,
+				B1452C702B61C64C00091BE4 /* RootCoordinator.swift */,
 			);
 			path = Start;
 			sourceTree = "<group>";
@@ -232,6 +256,7 @@
 		AAFAA8712AD1E5BC008DEBB6 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				B1452C682B61BEFC00091BE4 /* LoginFactory.swift */,
 				AAFAA8732AD1E5D8008DEBB6 /* LoginCoordinator.swift */,
 			);
 			path = Coordinator;
@@ -240,6 +265,7 @@
 		AAFAA8722AD1E5C4008DEBB6 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				B1452C6A2B61C2B700091BE4 /* SignUpFactory.swift */,
 				AAFAA8752AD1E60D008DEBB6 /* SignUpCoordinator.swift */,
 			);
 			path = Coordinator;
@@ -284,6 +310,7 @@
 		AAFAA8812AD20022008DEBB6 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				B1452C6E2B61C59700091BE4 /* ResetPasswordFactory.swift */,
 				AAFAA8822AD200E4008DEBB6 /* ResetPasswordCoordinator.swift */,
 			);
 			path = Coordinator;
@@ -341,6 +368,7 @@
 			packageProductDependencies = (
 				AAD61D912B4CB06C00215294 /* FirebaseAuth */,
 				AAD61D932B4CB06C00215294 /* FirebaseStorage */,
+				AAAE40122B5548D8002A2E02 /* LeakedViewControllerDetector */,
 			);
 			productName = Login;
 			productReference = AADF71B32ACD86DD00A49530 /* Login.app */;
@@ -372,6 +400,7 @@
 			mainGroup = AADF71AA2ACD86DD00A49530;
 			packageReferences = (
 				AAD61D902B4CB06C00215294 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				AAAE40112B5548D8002A2E02 /* XCRemoteSwiftPackageReference "LeakedViewControllerDetector" */,
 			);
 			productRefGroup = AADF71B42ACD86DD00A49530 /* Products */;
 			projectDirPath = "";
@@ -402,12 +431,16 @@
 			files = (
 				AAFAA8702AD1E54A008DEBB6 /* AppCoordinator.swift in Sources */,
 				AADF71D52ACD8A2800A49530 /* ViewConfig.swift in Sources */,
+				B1452C712B61C64C00091BE4 /* RootCoordinator.swift in Sources */,
 				AAFAA8622AD1DD59008DEBB6 /* UIStackView+Extension.swift in Sources */,
 				AAFAA88D2AD21E88008DEBB6 /* Authentication.swift in Sources */,
 				AAFAA8802AD1FE27008DEBB6 /* ResetPasswordViewController.swift in Sources */,
 				AAFAA86C2AD1E399008DEBB6 /* SignUpViewModel.swift in Sources */,
 				AAFAA8742AD1E5D8008DEBB6 /* LoginCoordinator.swift in Sources */,
 				AAFAA8832AD200E4008DEBB6 /* ResetPasswordCoordinator.swift in Sources */,
+				B1452C6B2B61C2B700091BE4 /* SignUpFactory.swift in Sources */,
+				B1452C692B61BEFC00091BE4 /* LoginFactory.swift in Sources */,
+				B1452C6D2B61C3A900091BE4 /* NoSessionCoordinator.swift in Sources */,
 				AAFAA8682AD1E12D008DEBB6 /* SignUpViewController.swift in Sources */,
 				AADF71D62ACD8A2800A49530 /* NSLayout+Extension.swift in Sources */,
 				AADF71BB2ACD86DD00A49530 /* LoginViewController.swift in Sources */,
@@ -416,6 +449,7 @@
 				AAFAA8782AD1ECE3008DEBB6 /* SessionManager.swift in Sources */,
 				AAFAA8762AD1E60D008DEBB6 /* SignUpCoordinator.swift in Sources */,
 				AAFAA86E2AD1E472008DEBB6 /* Coordinator.swift in Sources */,
+				B1452C6F2B61C59700091BE4 /* ResetPasswordFactory.swift in Sources */,
 				AADF71B72ACD86DD00A49530 /* AppDelegate.swift in Sources */,
 				AADF71D82ACD900100A49530 /* Utils.swift in Sources */,
 				AAFAA86A2AD1E360008DEBB6 /* LoginViewModel.swift in Sources */,
@@ -563,7 +597,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L923PSABUA;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Login/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -591,7 +625,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L923PSABUA;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Login/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -637,6 +671,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AAAE40112B5548D8002A2E02 /* XCRemoteSwiftPackageReference "LeakedViewControllerDetector" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Janneman84/LeakedViewControllerDetector";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		AAD61D902B4CB06C00215294 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -648,6 +690,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AAAE40122B5548D8002A2E02 /* LeakedViewControllerDetector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AAAE40112B5548D8002A2E02 /* XCRemoteSwiftPackageReference "LeakedViewControllerDetector" */;
+			productName = LeakedViewControllerDetector;
+		};
 		AAD61D912B4CB06C00215294 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AAD61D902B4CB06C00215294 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

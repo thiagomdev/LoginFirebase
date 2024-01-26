@@ -2,7 +2,7 @@ import UIKit
 
 final class LoginViewController: UIViewController {
     
-    weak var coordinator: LoginCoordinator?
+    var coordinator: LoginCoordinator?
 
     private var viewModel: LoginViewModeling
     private lazy var iconImage = Utils.makeImage()

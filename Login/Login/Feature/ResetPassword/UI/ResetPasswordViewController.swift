@@ -2,7 +2,7 @@ import UIKit
 
 final class ResetPasswordViewController: UIViewController {
 
-    weak var coordinator: ResetPasswordCoordinator?
+    var coordinator: ResetPasswordCoordinator?
     
     private var viewModel: ResetPasswordViewModeling
     private lazy var iconImage = Utils.makeImage()
@@ -38,6 +38,16 @@ final class ResetPasswordViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("ResetPasswordViewController - viewDidAppear")
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("ResetPasswordViewController - viewDidDisappear")
     }
 }
 
